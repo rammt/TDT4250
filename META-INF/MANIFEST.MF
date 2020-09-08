@@ -1,7 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Assignment_1
-Bundle-SymbolicName: Assignment_1; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: Assignment_1;singleton:=true
+Automatic-Module-Name: Assignment_1
 Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: assignment_1,
+ assignment_1.impl,
+ assignment_1.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

@@ -18,6 +18,7 @@
     <genClasses ecoreClass="assignment_1.ecore#//Student">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/StudentNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Student/studyprogram"/>
     </genClasses>
     <genClasses ecoreClass="assignment_1.ecore#//StudyProgram"/>
   </genPackages>
