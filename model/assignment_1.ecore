@@ -5,15 +5,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CourseCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CourseCredit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CourseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsMandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Level"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Mandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Student">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StudentNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Programme">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfSemesters"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CourseStatus">
     <eLiterals name="O"/>
@@ -23,4 +19,6 @@
     <eLiterals name="M2A" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialization"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NewDataType2" instanceTypeName="newDataType2"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="CourseLevel"/>
 </ecore:EPackage>
