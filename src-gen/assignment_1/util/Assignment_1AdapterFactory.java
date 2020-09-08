@@ -77,8 +77,8 @@ public class Assignment_1AdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStudyProgram(StudyProgram object) {
-			return createStudyProgramAdapter();
+		public Adapter caseSpecialization(Specialization object) {
+			return createSpecializationAdapter();
 		}
 
 		@Override
@@ -129,16 +129,16 @@ public class Assignment_1AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link assignment_1.StudyProgram <em>Study Program</em>}'.
+	 * Creates a new adapter for an object of class '{@link assignment_1.Specialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see assignment_1.StudyProgram
+	 * @see assignment_1.Specialization
 	 * @generated
 	 */
-	public Adapter createStudyProgramAdapter() {
+	public Adapter createSpecializationAdapter() {
 		return null;
 	}
 

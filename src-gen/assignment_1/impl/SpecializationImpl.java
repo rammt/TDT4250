@@ -3,7 +3,7 @@
 package assignment_1.impl;
 
 import assignment_1.Assignment_1Package;
-import assignment_1.StudyProgram;
+import assignment_1.Specialization;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,18 +11,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Study Program</b></em>'.
+ * An implementation of the model object '<em><b>Specialization</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class StudyProgramImpl extends MinimalEObjectImpl.Container implements StudyProgram {
+public class SpecializationImpl extends MinimalEObjectImpl.Container implements Specialization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StudyProgramImpl() {
+	protected SpecializationImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class StudyProgramImpl extends MinimalEObjectImpl.Container implements St
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Assignment_1Package.Literals.STUDY_PROGRAM;
+		return Assignment_1Package.Literals.SPECIALIZATION;
 	}
 
-} //StudyProgramImpl
+} //SpecializationImpl

@@ -40,13 +40,13 @@ public interface Assignment_1Factory extends EFactory {
 	Student createStudent();
 
 	/**
-	 * Returns a new object of class '<em>Study Program</em>'.
+	 * Returns a new object of class '<em>Specialization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Study Program</em>'.
+	 * @return a new object of class '<em>Specialization</em>'.
 	 * @generated
 	 */
-	StudyProgram createStudyProgram();
+	Specialization createSpecialization();
 
 	/**
 	 * Returns the package supported by this factory.

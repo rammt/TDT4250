@@ -9,17 +9,27 @@
   <foreignModel>assignment_1.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Assignment_1" disposableProviderFactory="true" ecorePackage="assignment_1.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment_1.ecore#//CourseStatus">
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStatus/O"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStatus/VA"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStatus/VB"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStatus/M1A"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStatus/M2A"/>
+    </genEnums>
     <genClasses ecoreClass="assignment_1.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseCode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseCredit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/IsMandatory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/Level"/>
     </genClasses>
     <genClasses ecoreClass="assignment_1.ecore#//Student">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/StudentNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/Name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Student/studyprogram"/>
     </genClasses>
-    <genClasses ecoreClass="assignment_1.ecore#//StudyProgram"/>
+    <genClasses ecoreClass="assignment_1.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/NumberOfSemesters"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment_1.ecore#//Specialization"/>
   </genPackages>
 </genmodel:GenModel>

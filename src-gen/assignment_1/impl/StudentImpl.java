@@ -4,12 +4,10 @@ package assignment_1.impl;
 
 import assignment_1.Assignment_1Package;
 import assignment_1.Student;
-import assignment_1.StudyProgram;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -24,7 +22,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link assignment_1.impl.StudentImpl#getStudentNumber <em>Student Number</em>}</li>
  *   <li>{@link assignment_1.impl.StudentImpl#getName <em>Name</em>}</li>
- *   <li>{@link assignment_1.impl.StudentImpl#getStudyprogram <em>Studyprogram</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,16 +66,6 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getStudyprogram() <em>Studyprogram</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStudyprogram()
-	 * @generated
-	 * @ordered
-	 */
-	protected StudyProgram studyprogram;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,58 +139,12 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * @generated
 	 */
 	@Override
-	public StudyProgram getStudyprogram() {
-		if (studyprogram != null && studyprogram.eIsProxy()) {
-			InternalEObject oldStudyprogram = (InternalEObject) studyprogram;
-			studyprogram = (StudyProgram) eResolveProxy(oldStudyprogram);
-			if (studyprogram != oldStudyprogram) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Assignment_1Package.STUDENT__STUDYPROGRAM,
-							oldStudyprogram, studyprogram));
-			}
-		}
-		return studyprogram;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StudyProgram basicGetStudyprogram() {
-		return studyprogram;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStudyprogram(StudyProgram newStudyprogram) {
-		StudyProgram oldStudyprogram = studyprogram;
-		studyprogram = newStudyprogram;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Assignment_1Package.STUDENT__STUDYPROGRAM,
-					oldStudyprogram, studyprogram));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Assignment_1Package.STUDENT__STUDENT_NUMBER:
 			return getStudentNumber();
 		case Assignment_1Package.STUDENT__NAME:
 			return getName();
-		case Assignment_1Package.STUDENT__STUDYPROGRAM:
-			if (resolve)
-				return getStudyprogram();
-			return basicGetStudyprogram();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,9 +162,6 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			return;
 		case Assignment_1Package.STUDENT__NAME:
 			setName((String) newValue);
-			return;
-		case Assignment_1Package.STUDENT__STUDYPROGRAM:
-			setStudyprogram((StudyProgram) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,9 +181,6 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		case Assignment_1Package.STUDENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Assignment_1Package.STUDENT__STUDYPROGRAM:
-			setStudyprogram((StudyProgram) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -262,8 +197,6 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			return studentNumber != STUDENT_NUMBER_EDEFAULT;
 		case Assignment_1Package.STUDENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Assignment_1Package.STUDENT__STUDYPROGRAM:
-			return studyprogram != null;
 		}
 		return super.eIsSet(featureID);
 	}

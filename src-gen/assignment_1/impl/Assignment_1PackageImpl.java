@@ -5,13 +5,16 @@ package assignment_1.impl;
 import assignment_1.Assignment_1Factory;
 import assignment_1.Assignment_1Package;
 import assignment_1.Course;
+import assignment_1.CourseLevel;
+import assignment_1.CourseStatus;
+import assignment_1.Specialization;
 import assignment_1.Student;
-import assignment_1.StudyProgram;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -41,7 +44,28 @@ public class Assignment_1PackageImpl extends EPackageImpl implements Assignment_
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass studyProgramEClass = null;
+	private EClass specializationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum courseStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum courseLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType newDataType2EDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -193,8 +217,8 @@ public class Assignment_1PackageImpl extends EPackageImpl implements Assignment_
 	 * @generated
 	 */
 	@Override
-	public EReference getStudent_Studyprogram() {
-		return (EReference) studentEClass.getEStructuralFeatures().get(2);
+	public EClass getSpecialization() {
+		return specializationEClass;
 	}
 
 	/**
@@ -203,8 +227,28 @@ public class Assignment_1PackageImpl extends EPackageImpl implements Assignment_
 	 * @generated
 	 */
 	@Override
-	public EClass getStudyProgram() {
-		return studyProgramEClass;
+	public EEnum getCourseStatus() {
+		return courseStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCourseLevel() {
+		return courseLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EDataType getNewDataType2() {
+		return newDataType2EDataType;
 	}
 
 	/**
@@ -246,9 +290,15 @@ public class Assignment_1PackageImpl extends EPackageImpl implements Assignment_
 		studentEClass = createEClass(STUDENT);
 		createEAttribute(studentEClass, STUDENT__STUDENT_NUMBER);
 		createEAttribute(studentEClass, STUDENT__NAME);
-		createEReference(studentEClass, STUDENT__STUDYPROGRAM);
 
-		studyProgramEClass = createEClass(STUDY_PROGRAM);
+		specializationEClass = createEClass(SPECIALIZATION);
+
+		// Create enums
+		courseStatusEEnum = createEEnum(COURSE_STATUS);
+		courseLevelEEnum = createEEnum(COURSE_LEVEL);
+
+		// Create data types
+		newDataType2EDataType = createEDataType(NEW_DATA_TYPE2);
 	}
 
 	/**
@@ -297,12 +347,23 @@ public class Assignment_1PackageImpl extends EPackageImpl implements Assignment_
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStudent_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Student.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStudent_Studyprogram(), this.getStudyProgram(), null, "studyprogram", null, 0, 1,
-				Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(studyProgramEClass, StudyProgram.class, "StudyProgram", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(courseStatusEEnum, CourseStatus.class, "CourseStatus");
+		addEEnumLiteral(courseStatusEEnum, CourseStatus.O);
+		addEEnumLiteral(courseStatusEEnum, CourseStatus.VA);
+		addEEnumLiteral(courseStatusEEnum, CourseStatus.VB);
+		addEEnumLiteral(courseStatusEEnum, CourseStatus.M1A);
+		addEEnumLiteral(courseStatusEEnum, CourseStatus.M2A);
+
+		initEEnum(courseLevelEEnum, CourseLevel.class, "CourseLevel");
+
+		// Initialize data types
+		initEDataType(newDataType2EDataType, Object.class, "NewDataType2", IS_SERIALIZABLE,
+				!IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

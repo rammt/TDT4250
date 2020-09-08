@@ -4,8 +4,9 @@ package assignment_1;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,22 +150,13 @@ public interface Assignment_1Package extends EPackage {
 	int STUDENT__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Studyprogram</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STUDENT__STUDYPROGRAM = 2;
-
-	/**
 	 * The number of structural features of the '<em>Student</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = 3;
+	int STUDENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Student</em>' class.
@@ -176,32 +168,62 @@ public interface Assignment_1Package extends EPackage {
 	int STUDENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link assignment_1.impl.StudyProgramImpl <em>Study Program</em>}' class.
+	 * The meta object id for the '{@link assignment_1.impl.SpecializationImpl <em>Specialization</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see assignment_1.impl.StudyProgramImpl
-	 * @see assignment_1.impl.Assignment_1PackageImpl#getStudyProgram()
+	 * @see assignment_1.impl.SpecializationImpl
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getSpecialization()
 	 * @generated
 	 */
-	int STUDY_PROGRAM = 2;
+	int SPECIALIZATION = 2;
 
 	/**
-	 * The number of structural features of the '<em>Study Program</em>' class.
+	 * The number of structural features of the '<em>Specialization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDY_PROGRAM_FEATURE_COUNT = 0;
+	int SPECIALIZATION_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Study Program</em>' class.
+	 * The number of operations of the '<em>Specialization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDY_PROGRAM_OPERATION_COUNT = 0;
+	int SPECIALIZATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link assignment_1.CourseStatus <em>Course Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment_1.CourseStatus
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseStatus()
+	 * @generated
+	 */
+	int COURSE_STATUS = 3;
+
+	/**
+	 * The meta object id for the '{@link assignment_1.CourseLevel <em>Course Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment_1.CourseLevel
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseLevel()
+	 * @generated
+	 */
+	int COURSE_LEVEL = 4;
+
+	/**
+	 * The meta object id for the '<em>New Data Type2</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Object
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getNewDataType2()
+	 * @generated
+	 */
+	int NEW_DATA_TYPE2 = 5;
 
 	/**
 	 * Returns the meta object for class '{@link assignment_1.Course <em>Course</em>}'.
@@ -290,25 +312,45 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getStudent_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link assignment_1.Student#getStudyprogram <em>Studyprogram</em>}'.
+	 * Returns the meta object for class '{@link assignment_1.Specialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Studyprogram</em>'.
-	 * @see assignment_1.Student#getStudyprogram()
-	 * @see #getStudent()
+	 * @return the meta object for class '<em>Specialization</em>'.
+	 * @see assignment_1.Specialization
 	 * @generated
 	 */
-	EReference getStudent_Studyprogram();
+	EClass getSpecialization();
 
 	/**
-	 * Returns the meta object for class '{@link assignment_1.StudyProgram <em>Study Program</em>}'.
+	 * Returns the meta object for enum '{@link assignment_1.CourseStatus <em>Course Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Study Program</em>'.
-	 * @see assignment_1.StudyProgram
+	 * @return the meta object for enum '<em>Course Status</em>'.
+	 * @see assignment_1.CourseStatus
 	 * @generated
 	 */
-	EClass getStudyProgram();
+	EEnum getCourseStatus();
+
+	/**
+	 * Returns the meta object for enum '{@link assignment_1.CourseLevel <em>Course Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Course Level</em>'.
+	 * @see assignment_1.CourseLevel
+	 * @generated
+	 */
+	EEnum getCourseLevel();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.Object <em>New Data Type2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>New Data Type2</em>'.
+	 * @see java.lang.Object
+	 * @model instanceClass="java.lang.Object"
+	 * @generated
+	 */
+	EDataType getNewDataType2();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -402,22 +444,44 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute STUDENT__NAME = eINSTANCE.getStudent_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Studyprogram</b></em>' reference feature.
+		 * The meta object literal for the '{@link assignment_1.impl.SpecializationImpl <em>Specialization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see assignment_1.impl.SpecializationImpl
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getSpecialization()
 		 * @generated
 		 */
-		EReference STUDENT__STUDYPROGRAM = eINSTANCE.getStudent_Studyprogram();
+		EClass SPECIALIZATION = eINSTANCE.getSpecialization();
 
 		/**
-		 * The meta object literal for the '{@link assignment_1.impl.StudyProgramImpl <em>Study Program</em>}' class.
+		 * The meta object literal for the '{@link assignment_1.CourseStatus <em>Course Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see assignment_1.impl.StudyProgramImpl
-		 * @see assignment_1.impl.Assignment_1PackageImpl#getStudyProgram()
+		 * @see assignment_1.CourseStatus
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseStatus()
 		 * @generated
 		 */
-		EClass STUDY_PROGRAM = eINSTANCE.getStudyProgram();
+		EEnum COURSE_STATUS = eINSTANCE.getCourseStatus();
+
+		/**
+		 * The meta object literal for the '{@link assignment_1.CourseLevel <em>Course Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment_1.CourseLevel
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseLevel()
+		 * @generated
+		 */
+		EEnum COURSE_LEVEL = eINSTANCE.getCourseLevel();
+
+		/**
+		 * The meta object literal for the '<em>New Data Type2</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Object
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getNewDataType2()
+		 * @generated
+		 */
+		EDataType NEW_DATA_TYPE2 = eINSTANCE.getNewDataType2();
 
 	}
 
