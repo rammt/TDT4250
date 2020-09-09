@@ -5,7 +5,7 @@
     <semanticResources>assignment_1.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_DBujEPEQEeqjYaredqj-sw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_DC5AsPEQEeqjYaredqj-sw" name="assignment_1" repPath="#_DCms0PEQEeqjYaredqj-sw" changeId="909da1c3-09a5-4fb3-ac38-54d4211617f4">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_DC5AsPEQEeqjYaredqj-sw" name="assignment_1" repPath="#_DCms0PEQEeqjYaredqj-sw" changeId="9ed38063-f5f2-4071-bdc9-a6227d2fb736">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="assignment_1.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -22,7 +22,19 @@
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram uid="_DCms0PEQEeqjYaredqj-sw">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_DC4ZoPEQEeqjYaredqj-sw" source="DANNOTATION_CUSTOMIZATION_KEY">
-      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_DC4ZofEQEeqjYaredqj-sw"/>
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_DC4ZofEQEeqjYaredqj-sw">
+        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_t_Cu8PJ5EeqxHfeNNGvLZg" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:FlatContainerStyleDescription" xmi:id="_t_UbwPJ5EeqxHfeNNGvLZg" arcWidth="8" arcHeight="8" borderSizeComputationExpression="1" tooltipExpression="service:renderTooltip" roundedCorner="true" widthComputationExpression="12" heightComputationExpression="10" backgroundStyle="Liquid">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          <backgroundColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          <foregroundColor xmi:type="description:UserFixedColor" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@userColorsPalettes[name='Ecore%20Palette']/@entries[name='EClass']"/>
+        </computedStyleDescriptions>
+      </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_DC5AsfEQEeqjYaredqj-sw" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_DC5AsvEQEeqjYaredqj-sw" type="Sirius" element="_DCms0PEQEeqjYaredqj-sw" measurementUnit="Pixel">
@@ -44,6 +56,10 @@
             <children xmi:type="notation:Node" xmi:id="_jJCEcPEVEeqjYaredqj-sw" type="3010" element="_jI790PEVEeqjYaredqj-sw">
               <styles xmi:type="notation:FontStyle" xmi:id="_jJCEcfEVEeqjYaredqj-sw" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_jJCEcvEVEeqjYaredqj-sw"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_t_dlsPJ5EeqxHfeNNGvLZg" type="3010" element="_t_ASsPJ5EeqxHfeNNGvLZg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_t_dlsfJ5EeqxHfeNNGvLZg" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_t_dlsvJ5EeqxHfeNNGvLZg"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_H2lcYvEUEeqjYaredqj-sw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_H2lcY_EUEeqjYaredqj-sw"/>
@@ -135,15 +151,13 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_DC5As_EQEeqjYaredqj-sw"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_H2hK8PEUEeqjYaredqj-sw" name="Course" tooltipText="" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_H2hK8PEUEeqjYaredqj-sw" name="Course" tooltipText="&#xA;ERROR : The attribute 'Course.FunnyTest' is not transient so it must have a data type that is serializable" width="12" height="10">
       <target xmi:type="ecore:EClass" href="assignment_1.ecore#//Course"/>
       <semanticElements xmi:type="ecore:EClass" href="assignment_1.ecore#//Course"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_feOOQfHTEeq9066hBsEvaQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
-        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
-      </ownedStyle>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_t_VC0PJ5EeqxHfeNNGvLZg" labelColor="239,41,41" description="_t_UbwPJ5EeqxHfeNNGvLZg" borderSize="1" borderSizeComputationExpression="1" borderColor="239,41,41" backgroundStyle="Liquid" foregroundColor="255,252,216"/>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_q4_2QPEUEeqjYaredqj-sw" name="CourseCode : EString" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="assignment_1.ecore#//Course/CourseCode"/>
@@ -175,6 +189,12 @@
         <ownedStyle xmi:type="diagram:BundledImage" uid="_lpnK0_EVEeqjYaredqj-sw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_t_ASsPJ5EeqxHfeNNGvLZg" name="FunnyTest : EEnumerator" tooltipText="&#xA;ERROR : The attribute 'Course.FunnyTest' is not transient so it must have a data type that is serializable">
+        <target xmi:type="ecore:EAttribute" href="assignment_1.ecore#//Course/FunnyTest"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="assignment_1.ecore#//Course/FunnyTest"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_t_DWAPJ5EeqxHfeNNGvLZg" labelColor="239,41,41" labelAlignment="LEFT" description="_t_Cu8PJ5EeqxHfeNNGvLZg" borderColor="239,41,41"/>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
