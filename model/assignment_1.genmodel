@@ -30,6 +30,7 @@
     <genClasses ecoreClass="assignment_1.ecore#//Specialization"/>
     <genClasses ecoreClass="assignment_1.ecore#//Programme">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/Duration"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
