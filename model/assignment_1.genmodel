@@ -17,7 +17,6 @@
       <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStatus/M2A"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment_1.ecore#//CourseLevel"/>
-    <genDataTypes ecoreDataType="assignment_1.ecore#//NewDataType2"/>
     <genClasses ecoreClass="assignment_1.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseCode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseCredit"/>
@@ -29,5 +28,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/Name"/>
     </genClasses>
     <genClasses ecoreClass="assignment_1.ecore#//Specialization"/>
+    <genClasses ecoreClass="assignment_1.ecore#//Programme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/Name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
