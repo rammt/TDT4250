@@ -4,9 +4,9 @@ package assignment_1;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,13 +95,13 @@ public interface Assignment_1Package extends EPackage {
 	int COURSE__COURSE_NAME = 2;
 
 	/**
-	 * The feature id for the '<em><b>Is Mandatory</b></em>' attribute.
+	 * The feature id for the '<em><b>Cource Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__IS_MANDATORY = 3;
+	int COURSE__COURCE_LEVEL = 3;
 
 	/**
 	 * The number of structural features of the '<em>Course</em>' class.
@@ -168,42 +168,141 @@ public interface Assignment_1Package extends EPackage {
 	int STUDENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link assignment_1.impl.SpecializationImpl <em>Specialization</em>}' class.
+	 * The meta object id for the '{@link assignment_1.impl.ProgrammeImpl <em>Programme</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see assignment_1.impl.SpecializationImpl
-	 * @see assignment_1.impl.Assignment_1PackageImpl#getSpecialization()
+	 * @see assignment_1.impl.ProgrammeImpl
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getProgramme()
 	 * @generated
 	 */
-	int SPECIALIZATION = 2;
+	int PROGRAMME = 2;
 
 	/**
-	 * The number of structural features of the '<em>Specialization</em>' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_FEATURE_COUNT = 0;
+	int PROGRAMME__NAME = 0;
 
 	/**
-	 * The number of operations of the '<em>Specialization</em>' class.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_OPERATION_COUNT = 0;
+	int PROGRAMME__DURATION = 1;
 
 	/**
-	 * The meta object id for the '{@link assignment_1.CourseStatus <em>Course Status</em>}' enum.
+	 * The feature id for the '<em><b>Semester</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see assignment_1.CourseStatus
-	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseStatus()
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__SEMESTER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Specialization</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__SPECIALIZATION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Programme</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Programme</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link assignment_1.impl.SemesterImpl <em>Semester</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment_1.impl.SemesterImpl
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getSemester()
 	 * @generated
 	 */
-	int COURSE_STATUS = 3;
+	int SEMESTER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Program</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__PROGRAM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Semester Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__SEMESTER_NR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Cource Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__COURCE_STATUS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mandatory Course</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__MANDATORY_COURSE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Elective Course</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__ELECTIVE_COURSE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Semester</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Semester</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link assignment_1.CourseLevel <em>Course Level</em>}' enum.
@@ -214,16 +313,6 @@ public interface Assignment_1Package extends EPackage {
 	 * @generated
 	 */
 	int COURSE_LEVEL = 4;
-
-	/**
-	 * The meta object id for the '<em>New Data Type2</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see assignment_1.impl.Assignment_1PackageImpl#getNewDataType2()
-	 * @generated
-	 */
-	int NEW_DATA_TYPE2 = 5;
 
 	/**
 	 * Returns the meta object for class '{@link assignment_1.Course <em>Course</em>}'.
@@ -269,15 +358,15 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getCourse_CourseName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link assignment_1.Course#isIsMandatory <em>Is Mandatory</em>}'.
+	 * Returns the meta object for the attribute '{@link assignment_1.Course#getCourceLevel <em>Cource Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Mandatory</em>'.
-	 * @see assignment_1.Course#isIsMandatory()
+	 * @return the meta object for the attribute '<em>Cource Level</em>'.
+	 * @see assignment_1.Course#getCourceLevel()
 	 * @see #getCourse()
 	 * @generated
 	 */
-	EAttribute getCourse_IsMandatory();
+	EAttribute getCourse_CourceLevel();
 
 	/**
 	 * Returns the meta object for class '{@link assignment_1.Student <em>Student</em>}'.
@@ -312,24 +401,123 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getStudent_Name();
 
 	/**
-	 * Returns the meta object for class '{@link assignment_1.Specialization <em>Specialization</em>}'.
+	 * Returns the meta object for class '{@link assignment_1.Programme <em>Programme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Specialization</em>'.
-	 * @see assignment_1.Specialization
+	 * @return the meta object for class '<em>Programme</em>'.
+	 * @see assignment_1.Programme
 	 * @generated
 	 */
-	EClass getSpecialization();
+	EClass getProgramme();
 
 	/**
-	 * Returns the meta object for enum '{@link assignment_1.CourseStatus <em>Course Status</em>}'.
+	 * Returns the meta object for the attribute '{@link assignment_1.Programme#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Course Status</em>'.
-	 * @see assignment_1.CourseStatus
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see assignment_1.Programme#getName()
+	 * @see #getProgramme()
 	 * @generated
 	 */
-	EEnum getCourseStatus();
+	EAttribute getProgramme_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment_1.Programme#getDuration <em>Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duration</em>'.
+	 * @see assignment_1.Programme#getDuration()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EAttribute getProgramme_Duration();
+
+	/**
+	 * Returns the meta object for the reference '{@link assignment_1.Programme#getSemester <em>Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Semester</em>'.
+	 * @see assignment_1.Programme#getSemester()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EReference getProgramme_Semester();
+
+	/**
+	 * Returns the meta object for the reference '{@link assignment_1.Programme#getSpecialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Specialization</em>'.
+	 * @see assignment_1.Programme#getSpecialization()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EReference getProgramme_Specialization();
+
+	/**
+	 * Returns the meta object for class '{@link assignment_1.Semester <em>Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Semester</em>'.
+	 * @see assignment_1.Semester
+	 * @generated
+	 */
+	EClass getSemester();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment_1.Semester#getProgram <em>Program</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Program</em>'.
+	 * @see assignment_1.Semester#getProgram()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_Program();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment_1.Semester#getSemesterNr <em>Semester Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Semester Nr</em>'.
+	 * @see assignment_1.Semester#getSemesterNr()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_SemesterNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment_1.Semester#getCourceStatus <em>Cource Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cource Status</em>'.
+	 * @see assignment_1.Semester#getCourceStatus()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_CourceStatus();
+
+	/**
+	 * Returns the meta object for the reference list '{@link assignment_1.Semester#getMandatoryCourse <em>Mandatory Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Mandatory Course</em>'.
+	 * @see assignment_1.Semester#getMandatoryCourse()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EReference getSemester_MandatoryCourse();
+
+	/**
+	 * Returns the meta object for the reference list '{@link assignment_1.Semester#getElectiveCourse <em>Elective Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Elective Course</em>'.
+	 * @see assignment_1.Semester#getElectiveCourse()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EReference getSemester_ElectiveCourse();
 
 	/**
 	 * Returns the meta object for enum '{@link assignment_1.CourseLevel <em>Course Level</em>}'.
@@ -340,17 +528,6 @@ public interface Assignment_1Package extends EPackage {
 	 * @generated
 	 */
 	EEnum getCourseLevel();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>New Data Type2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>New Data Type2</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
-	 * @generated
-	 */
-	EDataType getNewDataType2();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -410,12 +587,12 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute COURSE__COURSE_NAME = eINSTANCE.getCourse_CourseName();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Mandatory</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cource Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COURSE__IS_MANDATORY = eINSTANCE.getCourse_IsMandatory();
+		EAttribute COURSE__COURCE_LEVEL = eINSTANCE.getCourse_CourceLevel();
 
 		/**
 		 * The meta object literal for the '{@link assignment_1.impl.StudentImpl <em>Student</em>}' class.
@@ -444,24 +621,96 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute STUDENT__NAME = eINSTANCE.getStudent_Name();
 
 		/**
-		 * The meta object literal for the '{@link assignment_1.impl.SpecializationImpl <em>Specialization</em>}' class.
+		 * The meta object literal for the '{@link assignment_1.impl.ProgrammeImpl <em>Programme</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see assignment_1.impl.SpecializationImpl
-		 * @see assignment_1.impl.Assignment_1PackageImpl#getSpecialization()
+		 * @see assignment_1.impl.ProgrammeImpl
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getProgramme()
 		 * @generated
 		 */
-		EClass SPECIALIZATION = eINSTANCE.getSpecialization();
+		EClass PROGRAMME = eINSTANCE.getProgramme();
 
 		/**
-		 * The meta object literal for the '{@link assignment_1.CourseStatus <em>Course Status</em>}' enum.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see assignment_1.CourseStatus
-		 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseStatus()
 		 * @generated
 		 */
-		EEnum COURSE_STATUS = eINSTANCE.getCourseStatus();
+		EAttribute PROGRAMME__NAME = eINSTANCE.getProgramme_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME__DURATION = eINSTANCE.getProgramme_Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Semester</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME__SEMESTER = eINSTANCE.getProgramme_Semester();
+
+		/**
+		 * The meta object literal for the '<em><b>Specialization</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME__SPECIALIZATION = eINSTANCE.getProgramme_Specialization();
+
+		/**
+		 * The meta object literal for the '{@link assignment_1.impl.SemesterImpl <em>Semester</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment_1.impl.SemesterImpl
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getSemester()
+		 * @generated
+		 */
+		EClass SEMESTER = eINSTANCE.getSemester();
+
+		/**
+		 * The meta object literal for the '<em><b>Program</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__PROGRAM = eINSTANCE.getSemester_Program();
+
+		/**
+		 * The meta object literal for the '<em><b>Semester Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__SEMESTER_NR = eINSTANCE.getSemester_SemesterNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Cource Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__COURCE_STATUS = eINSTANCE.getSemester_CourceStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Mandatory Course</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMESTER__MANDATORY_COURSE = eINSTANCE.getSemester_MandatoryCourse();
+
+		/**
+		 * The meta object literal for the '<em><b>Elective Course</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMESTER__ELECTIVE_COURSE = eINSTANCE.getSemester_ElectiveCourse();
 
 		/**
 		 * The meta object literal for the '{@link assignment_1.CourseLevel <em>Course Level</em>}' enum.
@@ -472,16 +721,6 @@ public interface Assignment_1Package extends EPackage {
 		 * @generated
 		 */
 		EEnum COURSE_LEVEL = eINSTANCE.getCourseLevel();
-
-		/**
-		 * The meta object literal for the '<em>New Data Type2</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see assignment_1.impl.Assignment_1PackageImpl#getNewDataType2()
-		 * @generated
-		 */
-		EDataType NEW_DATA_TYPE2 = eINSTANCE.getNewDataType2();
 
 	}
 

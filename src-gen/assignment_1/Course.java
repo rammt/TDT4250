@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link assignment_1.Course#getCourseCode <em>Course Code</em>}</li>
  *   <li>{@link assignment_1.Course#getCourseCredit <em>Course Credit</em>}</li>
  *   <li>{@link assignment_1.Course#getCourseName <em>Course Name</em>}</li>
- *   <li>{@link assignment_1.Course#isIsMandatory <em>Is Mandatory</em>}</li>
+ *   <li>{@link assignment_1.Course#getCourceLevel <em>Cource Level</em>}</li>
  * </ul>
  *
  * @see assignment_1.Assignment_1Package#getCourse()
@@ -91,25 +91,28 @@ public interface Course extends EObject {
 	void setCourseName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Mandatory</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cource Level</b></em>' attribute.
+	 * The literals are from the enumeration {@link assignment_1.CourseLevel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Mandatory</em>' attribute.
-	 * @see #setIsMandatory(boolean)
-	 * @see assignment_1.Assignment_1Package#getCourse_IsMandatory()
+	 * @return the value of the '<em>Cource Level</em>' attribute.
+	 * @see assignment_1.CourseLevel
+	 * @see #setCourceLevel(CourseLevel)
+	 * @see assignment_1.Assignment_1Package#getCourse_CourceLevel()
 	 * @model
 	 * @generated
 	 */
-	boolean isIsMandatory();
+	CourseLevel getCourceLevel();
 
 	/**
-	 * Sets the value of the '{@link assignment_1.Course#isIsMandatory <em>Is Mandatory</em>}' attribute.
+	 * Sets the value of the '{@link assignment_1.Course#getCourceLevel <em>Cource Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Mandatory</em>' attribute.
-	 * @see #isIsMandatory()
+	 * @param value the new value of the '<em>Cource Level</em>' attribute.
+	 * @see assignment_1.CourseLevel
+	 * @see #getCourceLevel()
 	 * @generated
 	 */
-	void setIsMandatory(boolean value);
+	void setCourceLevel(CourseLevel value);
 
 } // Course
