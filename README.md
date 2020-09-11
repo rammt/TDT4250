@@ -48,7 +48,7 @@ Limitations of model
 Contains all available courses and programmes.
 
 #### StudyStart
-The year in which the Programme starts.
+The year the Programme starts.
 
 #### Programme
 Contains the name of the program, I.E Master of Science in Informatics, and the duration of the programme in semesters. It also specifies which type of the degree it is, either Integrated Master, 2 Year Master or Bachelor. A programme may contain several specializations/majors.
