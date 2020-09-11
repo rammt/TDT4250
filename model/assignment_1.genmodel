@@ -11,33 +11,58 @@
   <genPackages prefix="Assignment_1" disposableProviderFactory="true" ecorePackage="assignment_1.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment_1.ecore#//CourseLevel">
       <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/Level_1"/>
-      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/Level%202"/>
-      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/Level%203"/>
-      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/Higher%20Level"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/Level_2"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/Level_3"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseLevel/HigherLevel"/>
     </genEnums>
-    <genClasses ecoreClass="assignment_1.ecore#//Course">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseCode"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseCredit"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourseName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/CourceLevel"/>
-    </genClasses>
-    <genClasses ecoreClass="assignment_1.ecore#//Student">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/StudentNumber"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Student/Name"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment_1.ecore#//Degree">
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//Degree/Bachelor"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//Degree/Master"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//Degree/IntegratedMaster"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment_1.ecore#//CourseType">
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseType/O"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseType/VA"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseType/VB"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseType/M1A"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseType/M2A"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="assignment_1.ecore#//CourseStart">
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStart/Autumn"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStart/Spring"/>
+      <genEnumLiterals ecoreEnumLiteral="assignment_1.ecore#//CourseStart/Either"/>
+    </genEnums>
+    <genClasses ecoreClass="assignment_1.ecore#//StudyStart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//StudyStart/year"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//StudyStart/programme"/>
     </genClasses>
     <genClasses ecoreClass="assignment_1.ecore#//Programme">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/Name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/Duration"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Programme/semester"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/duration"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Programme/specialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Programme/degree"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment_1.ecore#//Specialization">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Specialization/subSpecialization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Specialization/semester"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Specialization/specializationCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Specialization/name"/>
     </genClasses>
     <genClasses ecoreClass="assignment_1.ecore#//Semester">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Semester/Program"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Semester/SemesterNr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Semester/CourceStatus"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Semester/mandatoryCourse"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Semester/electiveCourse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Semester/semesterNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Semester/semesterCredits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment_1.ecore#//Semester/coursegroup"/>
     </genClasses>
-    <genClasses ecoreClass="assignment_1.ecore#//%"/>
+    <genClasses ecoreClass="assignment_1.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/courseCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/courseCredit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/courseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/courseLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//Course/courseStart"/>
+    </genClasses>
+    <genClasses ecoreClass="assignment_1.ecore#//CourseGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assignment_1.ecore#//CourseGroup/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assignment_1.ecore#//CourseGroup/course"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -22,22 +22,22 @@ public interface Assignment_1Factory extends EFactory {
 	Assignment_1Factory eINSTANCE = assignment_1.impl.Assignment_1FactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Course</em>'.
+	 * Returns a new object of class '<em>Study Start</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Course</em>'.
+	 * @return a new object of class '<em>Study Start</em>'.
 	 * @generated
 	 */
-	Course createCourse();
+	StudyStart createStudyStart();
 
 	/**
-	 * Returns a new object of class '<em>Student</em>'.
+	 * Returns a new object of class '<em>Programme</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Student</em>'.
+	 * @return a new object of class '<em>Programme</em>'.
 	 * @generated
 	 */
-	Student createStudent();
+	Programme createProgramme();
 
 	/**
 	 * Returns a new object of class '<em>Specialization</em>'.
@@ -47,6 +47,33 @@ public interface Assignment_1Factory extends EFactory {
 	 * @generated
 	 */
 	Specialization createSpecialization();
+
+	/**
+	 * Returns a new object of class '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Semester</em>'.
+	 * @generated
+	 */
+	Semester createSemester();
+
+	/**
+	 * Returns a new object of class '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Course</em>'.
+	 * @generated
+	 */
+	Course createCourse();
+
+	/**
+	 * Returns a new object of class '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Course Group</em>'.
+	 * @generated
+	 */
+	CourseGroup createCourseGroup();
 
 	/**
 	 * Returns the package supported by this factory.

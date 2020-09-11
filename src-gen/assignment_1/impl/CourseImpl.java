@@ -4,6 +4,8 @@ package assignment_1.impl;
 
 import assignment_1.Assignment_1Package;
 import assignment_1.Course;
+import assignment_1.CourseLevel;
+import assignment_1.CourseStart;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -23,7 +25,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link assignment_1.impl.CourseImpl#getCourseCode <em>Course Code</em>}</li>
  *   <li>{@link assignment_1.impl.CourseImpl#getCourseCredit <em>Course Credit</em>}</li>
  *   <li>{@link assignment_1.impl.CourseImpl#getCourseName <em>Course Name</em>}</li>
- *   <li>{@link assignment_1.impl.CourseImpl#isIsMandatory <em>Is Mandatory</em>}</li>
+ *   <li>{@link assignment_1.impl.CourseImpl#getCourseLevel <em>Course Level</em>}</li>
+ *   <li>{@link assignment_1.impl.CourseImpl#getCourseStart <em>Course Start</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,24 +93,44 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	protected String courseName = COURSE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isIsMandatory() <em>Is Mandatory</em>}' attribute.
+	 * The default value of the '{@link #getCourseLevel() <em>Course Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsMandatory()
+	 * @see #getCourseLevel()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_MANDATORY_EDEFAULT = false;
+	protected static final CourseLevel COURSE_LEVEL_EDEFAULT = CourseLevel.LEVEL_1;
 
 	/**
-	 * The cached value of the '{@link #isIsMandatory() <em>Is Mandatory</em>}' attribute.
+	 * The cached value of the '{@link #getCourseLevel() <em>Course Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsMandatory()
+	 * @see #getCourseLevel()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isMandatory = IS_MANDATORY_EDEFAULT;
+	protected CourseLevel courseLevel = COURSE_LEVEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCourseStart() <em>Course Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CourseStart COURSE_START_EDEFAULT = CourseStart.AUTUMN;
+
+	/**
+	 * The cached value of the '{@link #getCourseStart() <em>Course Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected CourseStart courseStart = COURSE_START_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,8 +229,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public boolean isIsMandatory() {
-		return isMandatory;
+	public CourseLevel getCourseLevel() {
+		return courseLevel;
 	}
 
 	/**
@@ -216,12 +239,36 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public void setIsMandatory(boolean newIsMandatory) {
-		boolean oldIsMandatory = isMandatory;
-		isMandatory = newIsMandatory;
+	public void setCourseLevel(CourseLevel newCourseLevel) {
+		CourseLevel oldCourseLevel = courseLevel;
+		courseLevel = newCourseLevel == null ? COURSE_LEVEL_EDEFAULT : newCourseLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Assignment_1Package.COURSE__IS_MANDATORY,
-					oldIsMandatory, isMandatory));
+			eNotify(new ENotificationImpl(this, Notification.SET, Assignment_1Package.COURSE__COURSE_LEVEL,
+					oldCourseLevel, courseLevel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CourseStart getCourseStart() {
+		return courseStart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCourseStart(CourseStart newCourseStart) {
+		CourseStart oldCourseStart = courseStart;
+		courseStart = newCourseStart == null ? COURSE_START_EDEFAULT : newCourseStart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Assignment_1Package.COURSE__COURSE_START,
+					oldCourseStart, courseStart));
 	}
 
 	/**
@@ -238,8 +285,10 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return getCourseCredit();
 		case Assignment_1Package.COURSE__COURSE_NAME:
 			return getCourseName();
-		case Assignment_1Package.COURSE__IS_MANDATORY:
-			return isIsMandatory();
+		case Assignment_1Package.COURSE__COURSE_LEVEL:
+			return getCourseLevel();
+		case Assignment_1Package.COURSE__COURSE_START:
+			return getCourseStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,8 +310,11 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		case Assignment_1Package.COURSE__COURSE_NAME:
 			setCourseName((String) newValue);
 			return;
-		case Assignment_1Package.COURSE__IS_MANDATORY:
-			setIsMandatory((Boolean) newValue);
+		case Assignment_1Package.COURSE__COURSE_LEVEL:
+			setCourseLevel((CourseLevel) newValue);
+			return;
+		case Assignment_1Package.COURSE__COURSE_START:
+			setCourseStart((CourseStart) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -285,8 +337,11 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		case Assignment_1Package.COURSE__COURSE_NAME:
 			setCourseName(COURSE_NAME_EDEFAULT);
 			return;
-		case Assignment_1Package.COURSE__IS_MANDATORY:
-			setIsMandatory(IS_MANDATORY_EDEFAULT);
+		case Assignment_1Package.COURSE__COURSE_LEVEL:
+			setCourseLevel(COURSE_LEVEL_EDEFAULT);
+			return;
+		case Assignment_1Package.COURSE__COURSE_START:
+			setCourseStart(COURSE_START_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -306,8 +361,10 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return courseCredit != COURSE_CREDIT_EDEFAULT;
 		case Assignment_1Package.COURSE__COURSE_NAME:
 			return COURSE_NAME_EDEFAULT == null ? courseName != null : !COURSE_NAME_EDEFAULT.equals(courseName);
-		case Assignment_1Package.COURSE__IS_MANDATORY:
-			return isMandatory != IS_MANDATORY_EDEFAULT;
+		case Assignment_1Package.COURSE__COURSE_LEVEL:
+			return courseLevel != COURSE_LEVEL_EDEFAULT;
+		case Assignment_1Package.COURSE__COURSE_START:
+			return courseStart != COURSE_START_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,14 +380,16 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (CourseCode: ");
+		result.append(" (courseCode: ");
 		result.append(courseCode);
-		result.append(", CourseCredit: ");
+		result.append(", courseCredit: ");
 		result.append(courseCredit);
-		result.append(", CourseName: ");
+		result.append(", courseName: ");
 		result.append(courseName);
-		result.append(", IsMandatory: ");
-		result.append(isMandatory);
+		result.append(", courseLevel: ");
+		result.append(courseLevel);
+		result.append(", courseStart: ");
+		result.append(courseStart);
 		result.append(')');
 		return result.toString();
 	}
