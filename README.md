@@ -39,7 +39,7 @@ Eivind Rydningen and Thomas Iversen Ramm
 ## Content
 
 
-Limitations og model
+Limitations of model
 * All studyPrograms start in autumn
 
 ### Classes
