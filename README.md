@@ -14,20 +14,30 @@ Eivind Rydningen and Thomas Iversen Ramm
 │       ├── Assignment_1Package$Literals.class
 │       ├── Assignment_1Package.class
 │       ├── Course.class
+│       ├── CourseGroup.class
 │       ├── CourseLevel.class
-│       ├── CourseStatus.class
+│       ├── CourseStart.class
+│       ├── CourseType.class
+│       ├── Degree.class
+│       ├── Programme.class
+│       ├── Semester.class
 │       ├── Specialization.class
-│       ├── Student.class
+│       ├── StudyStart.class
 │       ├── impl
 │       │   ├── Assignment_1FactoryImpl.class
+│       │   ├── Assignment_1PackageImpl$1.class
 │       │   ├── Assignment_1PackageImpl.class
+│       │   ├── CourseGroupImpl.class
 │       │   ├── CourseImpl.class
+│       │   ├── ProgrammeImpl.class
+│       │   ├── SemesterImpl.class
 │       │   ├── SpecializationImpl.class
-│       │   └── StudentImpl.class
+│       │   └── StudyStartImpl.class
 │       └── util
 │           ├── Assignment_1AdapterFactory$1.class
 │           ├── Assignment_1AdapterFactory.class
-│           └── Assignment_1Switch.class
+│           ├── Assignment_1Switch.class
+│           └── Assignment_1Validator.class
 ├── build.properties
 ├── model
 │   ├── assignment_1.aird
@@ -40,19 +50,28 @@ Eivind Rydningen and Thomas Iversen Ramm
         ├── Assignment_1Factory.java
         ├── Assignment_1Package.java
         ├── Course.java
+        ├── CourseGroup.java
         ├── CourseLevel.java
-        ├── CourseStatus.java
+        ├── CourseStart.java
+        ├── CourseType.java
+        ├── Degree.java
+        ├── Programme.java
+        ├── Semester.java
         ├── Specialization.java
-        ├── Student.java
+        ├── StudyStart.java
         ├── impl
         │   ├── Assignment_1FactoryImpl.java
         │   ├── Assignment_1PackageImpl.java
+        │   ├── CourseGroupImpl.java
         │   ├── CourseImpl.java
+        │   ├── ProgrammeImpl.java
+        │   ├── SemesterImpl.java
         │   ├── SpecializationImpl.java
-        │   └── StudentImpl.java
+        │   └── StudyStartImpl.java
         └── util
             ├── Assignment_1AdapterFactory.java
-            └── Assignment_1Switch.java
+            ├── Assignment_1Switch.java
+            └── Assignment_1Validator.java
 ``` 
 
 ## Content
