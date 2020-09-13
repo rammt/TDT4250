@@ -5,7 +5,7 @@ package assignment_1.impl;
 import assignment_1.Assignment_1Package;
 import assignment_1.Degree;
 import assignment_1.Programme;
-import assignment_1.Specialization;
+import assignment_1.StudyStart;
 
 import java.util.Collection;
 
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link assignment_1.impl.ProgrammeImpl#getName <em>Name</em>}</li>
  *   <li>{@link assignment_1.impl.ProgrammeImpl#getDuration <em>Duration</em>}</li>
- *   <li>{@link assignment_1.impl.ProgrammeImpl#getSpecialization <em>Specialization</em>}</li>
+ *   <li>{@link assignment_1.impl.ProgrammeImpl#getStudystart <em>Studystart</em>}</li>
  *   <li>{@link assignment_1.impl.ProgrammeImpl#getDegree <em>Degree</em>}</li>
  * </ul>
  *
@@ -81,14 +81,14 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected int duration = DURATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSpecialization() <em>Specialization</em>}' containment reference list.
+	 * The cached value of the '{@link #getStudystart() <em>Studystart</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecialization()
+	 * @see #getStudystart()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specialization> specialization;
+	protected EList<StudyStart> studystart;
 
 	/**
 	 * The default value of the '{@link #getDegree() <em>Degree</em>}' attribute.
@@ -155,20 +155,10 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public int getDuration() {
-		// Derives the duration of the programme in number of semesters from the program type.
-		int duration;
-		String degreeName = getDegree().getName();
-		if(degreeName == "Bachelor") {
-			duration = 6;
-		} else if(degreeName == "IntegratedMaster") {
-			duration = 10;
-		} else {
-			duration = 4;
-		}
 		return duration;
 	}
 
@@ -192,12 +182,12 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @generated
 	 */
 	@Override
-	public EList<Specialization> getSpecialization() {
-		if (specialization == null) {
-			specialization = new EObjectContainmentEList<Specialization>(Specialization.class, this,
-					Assignment_1Package.PROGRAMME__SPECIALIZATION);
+	public EList<StudyStart> getStudystart() {
+		if (studystart == null) {
+			studystart = new EObjectContainmentEList<StudyStart>(StudyStart.class, this,
+					Assignment_1Package.PROGRAMME__STUDYSTART);
 		}
-		return specialization;
+		return studystart;
 	}
 
 	/**
@@ -232,8 +222,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Assignment_1Package.PROGRAMME__SPECIALIZATION:
-			return ((InternalEList<?>) getSpecialization()).basicRemove(otherEnd, msgs);
+		case Assignment_1Package.PROGRAMME__STUDYSTART:
+			return ((InternalEList<?>) getStudystart()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,8 +240,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			return getName();
 		case Assignment_1Package.PROGRAMME__DURATION:
 			return getDuration();
-		case Assignment_1Package.PROGRAMME__SPECIALIZATION:
-			return getSpecialization();
+		case Assignment_1Package.PROGRAMME__STUDYSTART:
+			return getStudystart();
 		case Assignment_1Package.PROGRAMME__DEGREE:
 			return getDegree();
 		}
@@ -273,9 +263,9 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		case Assignment_1Package.PROGRAMME__DURATION:
 			setDuration((Integer) newValue);
 			return;
-		case Assignment_1Package.PROGRAMME__SPECIALIZATION:
-			getSpecialization().clear();
-			getSpecialization().addAll((Collection<? extends Specialization>) newValue);
+		case Assignment_1Package.PROGRAMME__STUDYSTART:
+			getStudystart().clear();
+			getStudystart().addAll((Collection<? extends StudyStart>) newValue);
 			return;
 		case Assignment_1Package.PROGRAMME__DEGREE:
 			setDegree((Degree) newValue);
@@ -298,8 +288,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		case Assignment_1Package.PROGRAMME__DURATION:
 			setDuration(DURATION_EDEFAULT);
 			return;
-		case Assignment_1Package.PROGRAMME__SPECIALIZATION:
-			getSpecialization().clear();
+		case Assignment_1Package.PROGRAMME__STUDYSTART:
+			getStudystart().clear();
 			return;
 		case Assignment_1Package.PROGRAMME__DEGREE:
 			setDegree(DEGREE_EDEFAULT);
@@ -320,8 +310,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case Assignment_1Package.PROGRAMME__DURATION:
 			return duration != DURATION_EDEFAULT;
-		case Assignment_1Package.PROGRAMME__SPECIALIZATION:
-			return specialization != null && !specialization.isEmpty();
+		case Assignment_1Package.PROGRAMME__STUDYSTART:
+			return studystart != null && !studystart.isEmpty();
 		case Assignment_1Package.PROGRAMME__DEGREE:
 			return degree != DEGREE_EDEFAULT;
 		}

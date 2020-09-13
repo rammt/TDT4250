@@ -59,6 +59,52 @@ public interface Assignment_1Package extends EPackage {
 	Assignment_1Package eINSTANCE = assignment_1.impl.Assignment_1PackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link assignment_1.impl.StudyPlanImpl <em>Study Plan</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see assignment_1.impl.StudyPlanImpl
+	 * @see assignment_1.impl.Assignment_1PackageImpl#getStudyPlan()
+	 * @generated
+	 */
+	int STUDY_PLAN = 0;
+
+	/**
+	 * The feature id for the '<em><b>Course</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDY_PLAN__COURSE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Programme</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDY_PLAN__PROGRAMME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Study Plan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDY_PLAN_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Study Plan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDY_PLAN_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link assignment_1.impl.StudyStartImpl <em>Study Start</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,7 +112,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getStudyStart()
 	 * @generated
 	 */
-	int STUDY_START = 0;
+	int STUDY_START = 1;
 
 	/**
 	 * The feature id for the '<em><b>Year</b></em>' attribute.
@@ -78,13 +124,13 @@ public interface Assignment_1Package extends EPackage {
 	int STUDY_START__YEAR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Programme</b></em>' reference.
+	 * The feature id for the '<em><b>Specialization</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDY_START__PROGRAMME = 1;
+	int STUDY_START__SPECIALIZATION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Study Start</em>' class.
@@ -112,7 +158,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getProgramme()
 	 * @generated
 	 */
-	int PROGRAMME = 1;
+	int PROGRAMME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -133,13 +179,13 @@ public interface Assignment_1Package extends EPackage {
 	int PROGRAMME__DURATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Specialization</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Studystart</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__SPECIALIZATION = 2;
+	int PROGRAMME__STUDYSTART = 2;
 
 	/**
 	 * The feature id for the '<em><b>Degree</b></em>' attribute.
@@ -176,7 +222,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getSpecialization()
 	 * @generated
 	 */
-	int SPECIALIZATION = 2;
+	int SPECIALIZATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Sub Specialization</b></em>' containment reference list.
@@ -215,13 +261,22 @@ public interface Assignment_1Package extends EPackage {
 	int SPECIALIZATION__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Studystart</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__STUDYSTART = 4;
+
+	/**
 	 * The number of structural features of the '<em>Specialization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_FEATURE_COUNT = 4;
+	int SPECIALIZATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Specialization</em>' class.
@@ -240,7 +295,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getSemester()
 	 * @generated
 	 */
-	int SEMESTER = 3;
+	int SEMESTER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Semester Nr</b></em>' attribute.
@@ -295,7 +350,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourse()
 	 * @generated
 	 */
-	int COURSE = 4;
+	int COURSE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Course Code</b></em>' attribute.
@@ -343,13 +398,22 @@ public interface Assignment_1Package extends EPackage {
 	int COURSE__COURSE_START = 4;
 
 	/**
+	 * The feature id for the '<em><b>Course Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__COURSE_TITLE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 5;
+	int COURSE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -368,7 +432,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseGroup()
 	 * @generated
 	 */
-	int COURSE_GROUP = 5;
+	int COURSE_GROUP = 6;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -380,7 +444,7 @@ public interface Assignment_1Package extends EPackage {
 	int COURSE_GROUP__TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Course</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Course</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -414,7 +478,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseLevel()
 	 * @generated
 	 */
-	int COURSE_LEVEL = 6;
+	int COURSE_LEVEL = 7;
 
 	/**
 	 * The meta object id for the '{@link assignment_1.Degree <em>Degree</em>}' enum.
@@ -424,7 +488,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getDegree()
 	 * @generated
 	 */
-	int DEGREE = 7;
+	int DEGREE = 8;
 
 	/**
 	 * The meta object id for the '{@link assignment_1.CourseType <em>Course Type</em>}' enum.
@@ -434,7 +498,7 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseType()
 	 * @generated
 	 */
-	int COURSE_TYPE = 8;
+	int COURSE_TYPE = 9;
 
 	/**
 	 * The meta object id for the '{@link assignment_1.CourseStart <em>Course Start</em>}' enum.
@@ -444,7 +508,39 @@ public interface Assignment_1Package extends EPackage {
 	 * @see assignment_1.impl.Assignment_1PackageImpl#getCourseStart()
 	 * @generated
 	 */
-	int COURSE_START = 9;
+	int COURSE_START = 10;
+
+	/**
+	 * Returns the meta object for class '{@link assignment_1.StudyPlan <em>Study Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Study Plan</em>'.
+	 * @see assignment_1.StudyPlan
+	 * @generated
+	 */
+	EClass getStudyPlan();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link assignment_1.StudyPlan#getCourse <em>Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Course</em>'.
+	 * @see assignment_1.StudyPlan#getCourse()
+	 * @see #getStudyPlan()
+	 * @generated
+	 */
+	EReference getStudyPlan_Course();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link assignment_1.StudyPlan#getProgramme <em>Programme</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Programme</em>'.
+	 * @see assignment_1.StudyPlan#getProgramme()
+	 * @see #getStudyPlan()
+	 * @generated
+	 */
+	EReference getStudyPlan_Programme();
 
 	/**
 	 * Returns the meta object for class '{@link assignment_1.StudyStart <em>Study Start</em>}'.
@@ -468,15 +564,15 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getStudyStart_Year();
 
 	/**
-	 * Returns the meta object for the reference '{@link assignment_1.StudyStart#getProgramme <em>Programme</em>}'.
+	 * Returns the meta object for the container reference '{@link assignment_1.StudyStart#getSpecialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme</em>'.
-	 * @see assignment_1.StudyStart#getProgramme()
+	 * @return the meta object for the container reference '<em>Specialization</em>'.
+	 * @see assignment_1.StudyStart#getSpecialization()
 	 * @see #getStudyStart()
 	 * @generated
 	 */
-	EReference getStudyStart_Programme();
+	EReference getStudyStart_Specialization();
 
 	/**
 	 * Returns the meta object for class '{@link assignment_1.Programme <em>Programme</em>}'.
@@ -511,15 +607,15 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getProgramme_Duration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link assignment_1.Programme#getSpecialization <em>Specialization</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assignment_1.Programme#getStudystart <em>Studystart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Specialization</em>'.
-	 * @see assignment_1.Programme#getSpecialization()
+	 * @return the meta object for the containment reference list '<em>Studystart</em>'.
+	 * @see assignment_1.Programme#getStudystart()
 	 * @see #getProgramme()
 	 * @generated
 	 */
-	EReference getProgramme_Specialization();
+	EReference getProgramme_Studystart();
 
 	/**
 	 * Returns the meta object for the attribute '{@link assignment_1.Programme#getDegree <em>Degree</em>}'.
@@ -585,6 +681,17 @@ public interface Assignment_1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSpecialization_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link assignment_1.Specialization#getStudystart <em>Studystart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Studystart</em>'.
+	 * @see assignment_1.Specialization#getStudystart()
+	 * @see #getSpecialization()
+	 * @generated
+	 */
+	EReference getSpecialization_Studystart();
 
 	/**
 	 * Returns the meta object for class '{@link assignment_1.Semester <em>Semester</em>}'.
@@ -695,6 +802,17 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getCourse_CourseStart();
 
 	/**
+	 * Returns the meta object for the attribute '{@link assignment_1.Course#getCourseTitle <em>Course Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Course Title</em>'.
+	 * @see assignment_1.Course#getCourseTitle()
+	 * @see #getCourse()
+	 * @generated
+	 */
+	EAttribute getCourse_CourseTitle();
+
+	/**
 	 * Returns the meta object for class '{@link assignment_1.CourseGroup <em>Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -716,10 +834,10 @@ public interface Assignment_1Package extends EPackage {
 	EAttribute getCourseGroup_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link assignment_1.CourseGroup#getCourse <em>Course</em>}'.
+	 * Returns the meta object for the reference list '{@link assignment_1.CourseGroup#getCourse <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Course</em>'.
+	 * @return the meta object for the reference list '<em>Course</em>'.
 	 * @see assignment_1.CourseGroup#getCourse()
 	 * @see #getCourseGroup()
 	 * @generated
@@ -790,6 +908,32 @@ public interface Assignment_1Package extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link assignment_1.impl.StudyPlanImpl <em>Study Plan</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see assignment_1.impl.StudyPlanImpl
+		 * @see assignment_1.impl.Assignment_1PackageImpl#getStudyPlan()
+		 * @generated
+		 */
+		EClass STUDY_PLAN = eINSTANCE.getStudyPlan();
+
+		/**
+		 * The meta object literal for the '<em><b>Course</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STUDY_PLAN__COURSE = eINSTANCE.getStudyPlan_Course();
+
+		/**
+		 * The meta object literal for the '<em><b>Programme</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STUDY_PLAN__PROGRAMME = eINSTANCE.getStudyPlan_Programme();
+
+		/**
 		 * The meta object literal for the '{@link assignment_1.impl.StudyStartImpl <em>Study Start</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -808,12 +952,12 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute STUDY_START__YEAR = eINSTANCE.getStudyStart_Year();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Specialization</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STUDY_START__PROGRAMME = eINSTANCE.getStudyStart_Programme();
+		EReference STUDY_START__SPECIALIZATION = eINSTANCE.getStudyStart_Specialization();
 
 		/**
 		 * The meta object literal for the '{@link assignment_1.impl.ProgrammeImpl <em>Programme</em>}' class.
@@ -842,12 +986,12 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute PROGRAMME__DURATION = eINSTANCE.getProgramme_Duration();
 
 		/**
-		 * The meta object literal for the '<em><b>Specialization</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Studystart</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME__SPECIALIZATION = eINSTANCE.getProgramme_Specialization();
+		EReference PROGRAMME__STUDYSTART = eINSTANCE.getProgramme_Studystart();
 
 		/**
 		 * The meta object literal for the '<em><b>Degree</b></em>' attribute feature.
@@ -898,6 +1042,14 @@ public interface Assignment_1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute SPECIALIZATION__NAME = eINSTANCE.getSpecialization_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Studystart</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATION__STUDYSTART = eINSTANCE.getSpecialization_Studystart();
 
 		/**
 		 * The meta object literal for the '{@link assignment_1.impl.SemesterImpl <em>Semester</em>}' class.
@@ -984,6 +1136,14 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute COURSE__COURSE_START = eINSTANCE.getCourse_CourseStart();
 
 		/**
+		 * The meta object literal for the '<em><b>Course Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE__COURSE_TITLE = eINSTANCE.getCourse_CourseTitle();
+
+		/**
 		 * The meta object literal for the '{@link assignment_1.impl.CourseGroupImpl <em>Course Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1002,7 +1162,7 @@ public interface Assignment_1Package extends EPackage {
 		EAttribute COURSE_GROUP__TYPE = eINSTANCE.getCourseGroup_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Course</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -66,6 +66,13 @@ public class Assignment_1Switch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case Assignment_1Package.STUDY_PLAN: {
+			StudyPlan studyPlan = (StudyPlan) theEObject;
+			T result = caseStudyPlan(studyPlan);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case Assignment_1Package.STUDY_START: {
 			StudyStart studyStart = (StudyStart) theEObject;
 			T result = caseStudyStart(studyStart);
@@ -111,6 +118,21 @@ public class Assignment_1Switch<T> extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Study Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Study Plan</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStudyPlan(StudyPlan object) {
+		return null;
 	}
 
 	/**

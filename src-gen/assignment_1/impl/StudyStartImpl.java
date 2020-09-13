@@ -3,16 +3,19 @@
 package assignment_1.impl;
 
 import assignment_1.Assignment_1Package;
-import assignment_1.Programme;
+import assignment_1.Specialization;
 import assignment_1.StudyStart;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link assignment_1.impl.StudyStartImpl#getYear <em>Year</em>}</li>
- *   <li>{@link assignment_1.impl.StudyStartImpl#getProgramme <em>Programme</em>}</li>
+ *   <li>{@link assignment_1.impl.StudyStartImpl#getSpecialization <em>Specialization</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,16 +51,6 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 	 * @ordered
 	 */
 	protected int year = YEAR_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getProgramme() <em>Programme</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProgramme()
-	 * @generated
-	 * @ordered
-	 */
-	protected Programme programme;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,17 +101,10 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 	 * @generated
 	 */
 	@Override
-	public Programme getProgramme() {
-		if (programme != null && programme.eIsProxy()) {
-			InternalEObject oldProgramme = (InternalEObject) programme;
-			programme = (Programme) eResolveProxy(oldProgramme);
-			if (programme != oldProgramme) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							Assignment_1Package.STUDY_START__PROGRAMME, oldProgramme, programme));
-			}
-		}
-		return programme;
+	public Specialization getSpecialization() {
+		if (eContainerFeatureID() != Assignment_1Package.STUDY_START__SPECIALIZATION)
+			return null;
+		return (Specialization) eInternalContainer();
 	}
 
 	/**
@@ -126,8 +112,10 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Programme basicGetProgramme() {
-		return programme;
+	public NotificationChain basicSetSpecialization(Specialization newSpecialization, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newSpecialization, Assignment_1Package.STUDY_START__SPECIALIZATION,
+				msgs);
+		return msgs;
 	}
 
 	/**
@@ -136,12 +124,69 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 	 * @generated
 	 */
 	@Override
-	public void setProgramme(Programme newProgramme) {
-		Programme oldProgramme = programme;
-		programme = newProgramme;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Assignment_1Package.STUDY_START__PROGRAMME,
-					oldProgramme, programme));
+	public void setSpecialization(Specialization newSpecialization) {
+		if (newSpecialization != eInternalContainer()
+				|| (eContainerFeatureID() != Assignment_1Package.STUDY_START__SPECIALIZATION
+						&& newSpecialization != null)) {
+			if (EcoreUtil.isAncestor(this, newSpecialization))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSpecialization != null)
+				msgs = ((InternalEObject) newSpecialization).eInverseAdd(this,
+						Assignment_1Package.SPECIALIZATION__STUDYSTART, Specialization.class, msgs);
+			msgs = basicSetSpecialization(newSpecialization, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Assignment_1Package.STUDY_START__SPECIALIZATION,
+					newSpecialization, newSpecialization));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetSpecialization((Specialization) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			return basicSetSpecialization(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			return eInternalContainer().eInverseRemove(this, Assignment_1Package.SPECIALIZATION__STUDYSTART,
+					Specialization.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -154,10 +199,8 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 		switch (featureID) {
 		case Assignment_1Package.STUDY_START__YEAR:
 			return getYear();
-		case Assignment_1Package.STUDY_START__PROGRAMME:
-			if (resolve)
-				return getProgramme();
-			return basicGetProgramme();
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			return getSpecialization();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,8 +216,8 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 		case Assignment_1Package.STUDY_START__YEAR:
 			setYear((Integer) newValue);
 			return;
-		case Assignment_1Package.STUDY_START__PROGRAMME:
-			setProgramme((Programme) newValue);
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			setSpecialization((Specialization) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,8 +234,8 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 		case Assignment_1Package.STUDY_START__YEAR:
 			setYear(YEAR_EDEFAULT);
 			return;
-		case Assignment_1Package.STUDY_START__PROGRAMME:
-			setProgramme((Programme) null);
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			setSpecialization((Specialization) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -208,8 +251,8 @@ public class StudyStartImpl extends MinimalEObjectImpl.Container implements Stud
 		switch (featureID) {
 		case Assignment_1Package.STUDY_START__YEAR:
 			return year != YEAR_EDEFAULT;
-		case Assignment_1Package.STUDY_START__PROGRAMME:
-			return programme != null;
+		case Assignment_1Package.STUDY_START__SPECIALIZATION:
+			return getSpecialization() != null;
 		}
 		return super.eIsSet(featureID);
 	}

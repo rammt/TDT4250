@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link assignment_1.Specialization#getSemester <em>Semester</em>}</li>
  *   <li>{@link assignment_1.Specialization#getSpecializationCode <em>Specialization Code</em>}</li>
  *   <li>{@link assignment_1.Specialization#getName <em>Name</em>}</li>
+ *   <li>{@link assignment_1.Specialization#getStudystart <em>Studystart</em>}</li>
  * </ul>
  *
  * @see assignment_1.Assignment_1Package#getSpecialization()
@@ -93,5 +94,29 @@ public interface Specialization extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Studystart</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link assignment_1.StudyStart#getSpecialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Studystart</em>' containment reference.
+	 * @see #setStudystart(StudyStart)
+	 * @see assignment_1.Assignment_1Package#getSpecialization_Studystart()
+	 * @see assignment_1.StudyStart#getSpecialization
+	 * @model opposite="specialization" containment="true"
+	 * @generated
+	 */
+	StudyStart getStudystart();
+
+	/**
+	 * Sets the value of the '{@link assignment_1.Specialization#getStudystart <em>Studystart</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Studystart</em>' containment reference.
+	 * @see #getStudystart()
+	 * @generated
+	 */
+	void setStudystart(StudyStart value);
 
 } // Specialization

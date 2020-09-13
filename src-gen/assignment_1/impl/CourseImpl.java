@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link assignment_1.impl.CourseImpl#getCourseName <em>Course Name</em>}</li>
  *   <li>{@link assignment_1.impl.CourseImpl#getCourseLevel <em>Course Level</em>}</li>
  *   <li>{@link assignment_1.impl.CourseImpl#getCourseStart <em>Course Start</em>}</li>
+ *   <li>{@link assignment_1.impl.CourseImpl#getCourseTitle <em>Course Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +132,26 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected CourseStart courseStart = COURSE_START_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCourseTitle() <em>Course Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COURSE_TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCourseTitle() <em>Course Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String courseTitle = COURSE_TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +295,16 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String getCourseTitle() {
+		return getCourseCode() + " - " + getCourseName();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -289,6 +320,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return getCourseLevel();
 		case Assignment_1Package.COURSE__COURSE_START:
 			return getCourseStart();
+		case Assignment_1Package.COURSE__COURSE_TITLE:
+			return getCourseTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -365,6 +398,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			return courseLevel != COURSE_LEVEL_EDEFAULT;
 		case Assignment_1Package.COURSE__COURSE_START:
 			return courseStart != COURSE_START_EDEFAULT;
+		case Assignment_1Package.COURSE__COURSE_TITLE:
+			return COURSE_TITLE_EDEFAULT == null ? courseTitle != null : !COURSE_TITLE_EDEFAULT.equals(courseTitle);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -390,6 +425,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		result.append(courseLevel);
 		result.append(", courseStart: ");
 		result.append(courseStart);
+		result.append(", courseTitle: ");
+		result.append(courseTitle);
 		result.append(')');
 		return result.toString();
 	}

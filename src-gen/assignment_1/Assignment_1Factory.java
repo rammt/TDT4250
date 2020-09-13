@@ -22,6 +22,15 @@ public interface Assignment_1Factory extends EFactory {
 	Assignment_1Factory eINSTANCE = assignment_1.impl.Assignment_1FactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Study Plan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Study Plan</em>'.
+	 * @generated
+	 */
+	StudyPlan createStudyPlan();
+
+	/**
 	 * Returns a new object of class '<em>Study Start</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -57,6 +57,8 @@ public class Assignment_1FactoryImpl extends EFactoryImpl implements Assignment_
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case Assignment_1Package.STUDY_PLAN:
+			return createStudyPlan();
 		case Assignment_1Package.STUDY_START:
 			return createStudyStart();
 		case Assignment_1Package.PROGRAMME:
@@ -114,6 +116,17 @@ public class Assignment_1FactoryImpl extends EFactoryImpl implements Assignment_
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StudyPlan createStudyPlan() {
+		StudyPlanImpl studyPlan = new StudyPlanImpl();
+		return studyPlan;
 	}
 
 	/**

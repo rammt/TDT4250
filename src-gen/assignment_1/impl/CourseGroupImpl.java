@@ -10,18 +10,15 @@ import assignment_1.CourseType;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +56,7 @@ public class CourseGroupImpl extends MinimalEObjectImpl.Container implements Cou
 	protected CourseType type = TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCourse() <em>Course</em>}' containment reference list.
+	 * The cached value of the '{@link #getCourse() <em>Course</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCourse()
@@ -119,23 +116,9 @@ public class CourseGroupImpl extends MinimalEObjectImpl.Container implements Cou
 	@Override
 	public EList<Course> getCourse() {
 		if (course == null) {
-			course = new EObjectContainmentEList<Course>(Course.class, this, Assignment_1Package.COURSE_GROUP__COURSE);
+			course = new EObjectResolvingEList<Course>(Course.class, this, Assignment_1Package.COURSE_GROUP__COURSE);
 		}
 		return course;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Assignment_1Package.COURSE_GROUP__COURSE:
-			return ((InternalEList<?>) getCourse()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

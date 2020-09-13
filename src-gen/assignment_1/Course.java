@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link assignment_1.Course#getCourseName <em>Course Name</em>}</li>
  *   <li>{@link assignment_1.Course#getCourseLevel <em>Course Level</em>}</li>
  *   <li>{@link assignment_1.Course#getCourseStart <em>Course Start</em>}</li>
+ *   <li>{@link assignment_1.Course#getCourseTitle <em>Course Title</em>}</li>
  * </ul>
  *
  * @see assignment_1.Assignment_1Package#getCourse()
@@ -141,5 +142,16 @@ public interface Course extends EObject {
 	 * @generated
 	 */
 	void setCourseStart(CourseStart value);
+
+	/**
+	 * Returns the value of the '<em><b>Course Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course Title</em>' attribute.
+	 * @see assignment_1.Assignment_1Package#getCourse_CourseTitle()
+	 * @model changeable="false" derived="true"
+	 * @generated
+	 */
+	String getCourseTitle();
 
 } // Course

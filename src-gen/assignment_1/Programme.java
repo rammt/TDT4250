@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link assignment_1.Programme#getName <em>Name</em>}</li>
  *   <li>{@link assignment_1.Programme#getDuration <em>Duration</em>}</li>
- *   <li>{@link assignment_1.Programme#getSpecialization <em>Specialization</em>}</li>
+ *   <li>{@link assignment_1.Programme#getStudystart <em>Studystart</em>}</li>
  *   <li>{@link assignment_1.Programme#getDegree <em>Degree</em>}</li>
  * </ul>
  *
@@ -55,7 +55,7 @@ public interface Programme extends EObject {
 	 * @return the value of the '<em>Duration</em>' attribute.
 	 * @see #setDuration(int)
 	 * @see assignment_1.Assignment_1Package#getProgramme_Duration()
-	 * @model
+	 * @model derived="true"
 	 * @generated
 	 */
 	int getDuration();
@@ -71,16 +71,16 @@ public interface Programme extends EObject {
 	void setDuration(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Specialization</b></em>' containment reference list.
-	 * The list contents are of type {@link assignment_1.Specialization}.
+	 * Returns the value of the '<em><b>Studystart</b></em>' containment reference list.
+	 * The list contents are of type {@link assignment_1.StudyStart}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specialization</em>' containment reference list.
-	 * @see assignment_1.Assignment_1Package#getProgramme_Specialization()
+	 * @return the value of the '<em>Studystart</em>' containment reference list.
+	 * @see assignment_1.Assignment_1Package#getProgramme_Studystart()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Specialization> getSpecialization();
+	EList<StudyStart> getStudystart();
 
 	/**
 	 * Returns the value of the '<em><b>Degree</b></em>' attribute.

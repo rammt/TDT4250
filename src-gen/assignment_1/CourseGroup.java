@@ -50,13 +50,13 @@ public interface CourseGroup extends EObject {
 	void setType(CourseType value);
 
 	/**
-	 * Returns the value of the '<em><b>Course</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Course</b></em>' reference list.
 	 * The list contents are of type {@link assignment_1.Course}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Course</em>' containment reference list.
+	 * @return the value of the '<em>Course</em>' reference list.
 	 * @see assignment_1.Assignment_1Package#getCourseGroup_Course()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Course> getCourse();

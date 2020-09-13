@@ -87,6 +87,8 @@ public class Assignment_1Validator extends EObjectValidator {
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		switch (classifierID) {
+		case Assignment_1Package.STUDY_PLAN:
+			return validateStudyPlan((StudyPlan) value, diagnostics, context);
 		case Assignment_1Package.STUDY_START:
 			return validateStudyStart((StudyStart) value, diagnostics, context);
 		case Assignment_1Package.PROGRAMME:
@@ -110,6 +112,15 @@ public class Assignment_1Validator extends EObjectValidator {
 		default:
 			return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStudyPlan(StudyPlan studyPlan, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(studyPlan, diagnostics, context);
 	}
 
 	/**

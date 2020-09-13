@@ -67,6 +67,11 @@ public class Assignment_1AdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected Assignment_1Switch<Adapter> modelSwitch = new Assignment_1Switch<Adapter>() {
 		@Override
+		public Adapter caseStudyPlan(StudyPlan object) {
+			return createStudyPlanAdapter();
+		}
+
+		@Override
 		public Adapter caseStudyStart(StudyStart object) {
 			return createStudyStartAdapter();
 		}
@@ -113,6 +118,20 @@ public class Assignment_1AdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link assignment_1.StudyPlan <em>Study Plan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see assignment_1.StudyPlan
+	 * @generated
+	 */
+	public Adapter createStudyPlanAdapter() {
+		return null;
 	}
 
 	/**

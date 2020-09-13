@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link assignment_1.StudyStart#getYear <em>Year</em>}</li>
- *   <li>{@link assignment_1.StudyStart#getProgramme <em>Programme</em>}</li>
+ *   <li>{@link assignment_1.StudyStart#getSpecialization <em>Specialization</em>}</li>
  * </ul>
  *
  * @see assignment_1.Assignment_1Package#getStudyStart()
@@ -45,25 +45,27 @@ public interface StudyStart extends EObject {
 	void setYear(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Programme</b></em>' reference.
+	 * Returns the value of the '<em><b>Specialization</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link assignment_1.Specialization#getStudystart <em>Studystart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programme</em>' reference.
-	 * @see #setProgramme(Programme)
-	 * @see assignment_1.Assignment_1Package#getStudyStart_Programme()
-	 * @model
+	 * @return the value of the '<em>Specialization</em>' container reference.
+	 * @see #setSpecialization(Specialization)
+	 * @see assignment_1.Assignment_1Package#getStudyStart_Specialization()
+	 * @see assignment_1.Specialization#getStudystart
+	 * @model opposite="studystart" transient="false"
 	 * @generated
 	 */
-	Programme getProgramme();
+	Specialization getSpecialization();
 
 	/**
-	 * Sets the value of the '{@link assignment_1.StudyStart#getProgramme <em>Programme</em>}' reference.
+	 * Sets the value of the '{@link assignment_1.StudyStart#getSpecialization <em>Specialization</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Programme</em>' reference.
-	 * @see #getProgramme()
+	 * @param value the new value of the '<em>Specialization</em>' container reference.
+	 * @see #getSpecialization()
 	 * @generated
 	 */
-	void setProgramme(Programme value);
+	void setSpecialization(Specialization value);
 
 } // StudyStart
