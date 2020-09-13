@@ -6,12 +6,4 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated assignment_1 -->
-      <package
-            uri="http://www.example.org/assignment_1"
-            class="assignment_1.Assignment_1Package"
-            genModel="model/assignment_1.genmodel"/>
-   </extension>
-
 </plugin>

@@ -18,7 +18,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="studystart" upperBound="-1"
         eType="#//StudyStart" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="degree" eType="#//Degree"/>
@@ -57,6 +58,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseLevel" eType="#//CourseLevel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseStart" eType="#//CourseStart"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CourseType"/>
