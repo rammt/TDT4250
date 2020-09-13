@@ -51,7 +51,7 @@ Contains all available courses and programmes.
 The year the Programme starts.
 
 #### Programme
-Contains the name of the program, I.E Master of Science in Informatics, and the duration of the programme in semesters. It also specifies which type of the degree it is, either Integrated Master, 2 Year Master or Bachelor. A programme may contain several specializations/majors.
+Contains the name of the programme, I.E Master of Science in Informatics, and the duration of the programme in semesters. Programme derives its duration from its degree type. It also specifies which type of the degree it is, either Integrated Master, 2 Year Master or Bachelor. A programme may contain several specializations/majors.
 
 #### Specialization
 A specialization/major holds a specializationCode or keyword in addition to a name. A specialization may also contain several sub specialziations. It also consists of several semesters.
