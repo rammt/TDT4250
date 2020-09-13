@@ -26,7 +26,7 @@ Eivind Rydningen and Thomas Iversen Ramm
 │       ├── impl
 │       │   ... All implemantation classes
 │       └── util
-│           │   ... All utilities
+│           ... All utilities
 ├── model
 │   ├── assignment_1.aird
 │   ├── assignment_1.ecore
@@ -40,7 +40,7 @@ Eivind Rydningen and Thomas Iversen Ramm
 
 
 Limitations of model
-* All studyPrograms start in autumn
+* All study programmes must start in autumn
 
 ### Classes
 
