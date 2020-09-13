@@ -155,10 +155,20 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public int getDuration() {
+		// Derives the duration of the programme in number of semesters from the program type.
+		int duration;
+		String degreeName = getDegree().getName();
+		if(degreeName == "Bachelor") {
+			duration = 6;
+		} else if(degreeName == "IntegratedMaster") {
+			duration = 10;
+		} else {
+			duration = 4;
+		}
 		return duration;
 	}
 
