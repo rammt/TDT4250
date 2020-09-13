@@ -13,7 +13,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StudyStart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specialization" eType="#//Specialization"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialization" eType="#//Specialization"
+        eOpposite="#//Specialization/studystart"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,6 +30,8 @@
         eType="#//Semester" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="specializationCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studystart" eType="#//StudyStart"
+        containment="true" eOpposite="#//StudyStart/specialization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
