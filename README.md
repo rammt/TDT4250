@@ -40,7 +40,7 @@ Eivind Rydningen and Thomas Iversen Ramm
 
 
 Limitations of model
-* All studyPrograms start in autumn
+* All study programmes must start in autumn
 
 ### Classes
 
