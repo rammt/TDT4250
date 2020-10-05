@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getCourse()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumCredits'"
  * @generated
  */
 public interface Course extends EObject {

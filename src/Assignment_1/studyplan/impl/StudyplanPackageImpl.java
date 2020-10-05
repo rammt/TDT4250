@@ -15,12 +15,14 @@ import Assignment_1.studyplan.Specialization;
 import Assignment_1.studyplan.StudyplanFactory;
 import Assignment_1.studyplan.StudyplanPackage;
 
+import Assignment_1.studyplan.util.StudyplanValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -152,6 +154,15 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 
 		// Initialize created meta-data
 		theStudyplanPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theStudyplanPackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return StudyplanValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theStudyplanPackage.freeze();
@@ -619,6 +630,32 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (courseEClass,
+		   source,
+		   new String[] {
+			   "constraints", "maximumCredits"
+		   });
+		addAnnotation
+		  (courseGroupEClass,
+		   source,
+		   new String[] {
+			   "constraints", "needsCoursesWithEnoughCredits"
+		   });
 	}
 
 } //StudyplanPackageImpl

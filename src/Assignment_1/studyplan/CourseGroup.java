@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getCourseGroup()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='needsCoursesWithEnoughCredits'"
  * @generated
  */
 public interface CourseGroup extends EObject {
