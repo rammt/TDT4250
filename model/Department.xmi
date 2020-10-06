@@ -23,12 +23,10 @@
             mandatoryCredits="15.0"/>
         <courseGroups
             type="VA"
-            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.4"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.4"/>
         <courseGroups
             type="VB"
-            courses="//@courses.5 //@courses.6 //@courses.7"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.5 //@courses.6 //@courses.7"/>
       </semesters>
       <semesters
           number="2"
@@ -53,8 +51,7 @@
             mandatoryCredits="15.0"/>
         <courseGroups
             type="VA"
-            courses="//@courses.15 //@courses.16 //@courses.17"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.15 //@courses.16 //@courses.17"/>
       </semesters>
       <semesters
           number="4"
@@ -75,12 +72,10 @@
             mandatoryCredits="7.5"/>
         <courseGroups
             type="VA"
-            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.1"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.1"/>
         <courseGroups
             type="VB"
-            courses="//@courses.6 //@courses.7 //@courses.19 //@courses.5"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.6 //@courses.7 //@courses.19 //@courses.5"/>
       </semesters>
       <semesters
           number="2"
@@ -98,8 +93,7 @@
             mandatoryCredits="7.5"/>
         <courseGroups
             type="VB"
-            courses="//@courses.23 //@courses.22 //@courses.24"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.23 //@courses.22 //@courses.24"/>
         <courseGroups
             type="VA"
             courses="//@courses.13"
@@ -117,12 +111,10 @@
             mandatoryCredits="7.5"/>
         <courseGroups
             type="VA"
-            courses="//@courses.16 //@courses.17"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.16 //@courses.17"/>
         <courseGroups
             type="VB"
-            courses="//@courses.15"
-            mandatoryCredits="0.0"/>
+            courses="//@courses.15"/>
       </semesters>
       <semesters
           number="4"

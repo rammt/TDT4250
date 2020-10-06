@@ -127,6 +127,7 @@ public class StudyplanValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(course, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(course, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCourse_maximumCredits(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourse_testConstraint(course, diagnostics, context);
 		return result;
 	}
 
@@ -156,6 +157,35 @@ public class StudyplanValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * The cached validation expression for the testConstraint constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE__TEST_CONSTRAINT__EEXPRESSION = "";
+
+	/**
+	 * Validates the testConstraint constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourse_testConstraint(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE,
+				 course,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "testConstraint",
+				 COURSE__TEST_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
