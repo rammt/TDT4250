@@ -280,10 +280,10 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getTitle() {
-		return title;
+		return this.getCode() + " - " + this.getName();
 	}
 
 	/**
@@ -391,7 +391,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
@@ -409,7 +409,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		result.append(", start: ");
 		result.append(start);
 		result.append(", title: ");
-		result.append(title);
+		result.append(this.getTitle());
 		result.append(')');
 		return result.toString();
 	}
