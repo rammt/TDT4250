@@ -13,7 +13,7 @@
         name="Software">
       <semesters
           number="1"
-          credits="30.0">
+          credits="25.0">
         <courseGroups
             courses="//@courses.1"
             mandatoryCredits="7.5"/>
@@ -23,12 +23,10 @@
             mandatoryCredits="15.0"/>
         <courseGroups
             type="VA"
-            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.4"
-            mandatoryCredits="7.5"/>
+            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.4"/>
         <courseGroups
             type="VB"
-            courses="//@courses.5 //@courses.6 //@courses.7"
-            mandatoryCredits="7.5"/>
+            courses="//@courses.5 //@courses.6 //@courses.7"/>
       </semesters>
       <semesters
           number="2"
