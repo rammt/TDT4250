@@ -23,10 +23,12 @@
             mandatoryCredits="15.0"/>
         <courseGroups
             type="VA"
-            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.4"/>
+            courses="//@courses.2 //@courses.0 //@courses.3 //@courses.4"
+            mandatoryCredits="7.5"/>
         <courseGroups
             type="VB"
-            courses="//@courses.5 //@courses.6 //@courses.7"/>
+            courses="//@courses.5 //@courses.6 //@courses.7"
+            mandatoryCredits="7.5"/>
       </semesters>
       <semesters
           number="2"
@@ -232,7 +234,7 @@
       name="Artificial Intelligence Methods"
       level="Level_3"/>
   <courses code="TDT4230"
-      credits="7.5"
+      credits="2.0"
       name="Graphics and Visualization"
       level="HigherLevel"
       start="Spring"/>

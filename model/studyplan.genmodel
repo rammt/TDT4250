@@ -30,6 +30,7 @@
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseStart/Spring"/>
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseStart/Either"/>
     </genEnums>
+    <genDataTypes ecoreDataType="studyplan.ecore#//Credits"/>
     <genClasses ecoreClass="studyplan.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Course/credits"/>

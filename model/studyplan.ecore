@@ -30,13 +30,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="maximumCredits testConstraint"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
-      <details key="testConstraint" value=""/>
+      <details key="constraints" value="maximumCredits"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="#//Credits"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//CourseLevel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//CourseStart"/>
@@ -45,7 +42,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="needsCoursesWithEnoughCredits"/>
+      <details key="constraints" value="maximumMandatoryCreditsInAllCourseGroupsSameSemester"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
+      <details key="maximumMandatoryCreditsInAllCourseGroupsSameSemester" value="self.semester.courseGroups.mandatoryCredits->sum() &lt;= Sequence{self.semester.credits}->sum()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CourseType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
@@ -56,7 +56,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="#//Credits"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" upperBound="-1"
         eType="#//CourseGroup" containment="true" eOpposite="#//CourseGroup/semester"/>
   </eClassifiers>
@@ -80,5 +80,11 @@
         eType="#//Programme" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Credits" instanceClassName="float">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="minExclusive" value="0.0"/>
+      <details key="maxInclusive" value="30.0"/>
+    </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>
