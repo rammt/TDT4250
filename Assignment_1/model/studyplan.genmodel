@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>studyplan.ecore</foreignModel>
-  <genPackages prefix="Studyplan" basePackage="studyplan" disposableProviderFactory="true"
+  <genPackages prefix="Studyplan" basePackage="Assignment_1" disposableProviderFactory="true"
       ecorePackage="studyplan.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="studyplan.ecore#//Degree">
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//Degree/Bachelor"/>
