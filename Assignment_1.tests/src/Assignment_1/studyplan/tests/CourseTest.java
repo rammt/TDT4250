@@ -97,12 +97,13 @@ public class CourseTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see Assignment_1.studyplan.Course#getTitle()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetTitle() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		Course course = StudyplanFactory.eINSTANCE.createCourse();
+		course.setCode("TDT4250");
+		course.setName("Advanced Software Design");
+		assertEquals("TDT4250 - Advanced Software Design", course.getTitle());
 	}
 
 } //CourseTest
