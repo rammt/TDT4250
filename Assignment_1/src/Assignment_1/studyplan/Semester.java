@@ -54,7 +54,7 @@ public interface Semester extends EObject {
 	 * @return the value of the '<em>Credits</em>' attribute.
 	 * @see #setCredits(float)
 	 * @see Assignment_1.studyplan.StudyplanPackage#getSemester_Credits()
-	 * @model
+	 * @model dataType="Assignment_1.studyplan.Credits"
 	 * @generated
 	 */
 	float getCredits();

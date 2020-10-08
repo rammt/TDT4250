@@ -84,6 +84,8 @@ public class StudyplanFactoryImpl extends EFactoryImpl implements StudyplanFacto
 				return createCourseTypeFromString(eDataType, initialValue);
 			case StudyplanPackage.COURSE_START:
 				return createCourseStartFromString(eDataType, initialValue);
+			case StudyplanPackage.CREDITS:
+				return createCreditsFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +107,8 @@ public class StudyplanFactoryImpl extends EFactoryImpl implements StudyplanFacto
 				return convertCourseTypeToString(eDataType, instanceValue);
 			case StudyplanPackage.COURSE_START:
 				return convertCourseStartToString(eDataType, instanceValue);
+			case StudyplanPackage.CREDITS:
+				return convertCreditsToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -248,6 +252,24 @@ public class StudyplanFactoryImpl extends EFactoryImpl implements StudyplanFacto
 	 */
 	public String convertCourseStartToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Float createCreditsFromString(EDataType eDataType, String initialValue) {
+		return (Float)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCreditsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
