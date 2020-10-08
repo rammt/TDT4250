@@ -49,6 +49,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Semester/number"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Semester/credits"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyplan.ecore#//Semester/courseGroups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Semester/season"/>
     </genClasses>
     <genClasses ecoreClass="studyplan.ecore#//Specialization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Specialization/code"/>

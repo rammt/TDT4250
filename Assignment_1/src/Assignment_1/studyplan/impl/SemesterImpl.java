@@ -3,6 +3,7 @@
 package Assignment_1.studyplan.impl;
 
 import Assignment_1.studyplan.CourseGroup;
+import Assignment_1.studyplan.CourseStart;
 import Assignment_1.studyplan.Semester;
 import Assignment_1.studyplan.StudyplanPackage;
 
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Assignment_1.studyplan.impl.SemesterImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link Assignment_1.studyplan.impl.SemesterImpl#getCredits <em>Credits</em>}</li>
  *   <li>{@link Assignment_1.studyplan.impl.SemesterImpl#getCourseGroups <em>Course Groups</em>}</li>
+ *   <li>{@link Assignment_1.studyplan.impl.SemesterImpl#getSeason <em>Season</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,26 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @ordered
 	 */
 	protected EList<CourseGroup> courseGroups;
+
+	/**
+	 * The default value of the '{@link #getSeason() <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeason()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CourseStart SEASON_EDEFAULT = CourseStart.AUTUMN;
+
+	/**
+	 * The cached value of the '{@link #getSeason() <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeason()
+	 * @generated
+	 * @ordered
+	 */
+	protected CourseStart season = SEASON_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,6 +186,39 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public CourseStart getSeason() {
+		CourseStart season;
+		int semester = this.getNumber();
+		
+		// Odd semester
+		if (semester % 2 == 1) {
+			season = CourseStart.AUTUMN;
+		}
+		// Even semester
+		else {
+			season = CourseStart.SPRING;
+		}
+		
+		return season;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSeason(CourseStart newSeason) {
+		CourseStart oldSeason = season;
+		season = newSeason == null ? SEASON_EDEFAULT : newSeason;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyplanPackage.SEMESTER__SEASON, oldSeason, season));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -204,6 +259,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				return getCredits();
 			case StudyplanPackage.SEMESTER__COURSE_GROUPS:
 				return getCourseGroups();
+			case StudyplanPackage.SEMESTER__SEASON:
+				return getSeason();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -227,6 +284,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				getCourseGroups().clear();
 				getCourseGroups().addAll((Collection<? extends CourseGroup>)newValue);
 				return;
+			case StudyplanPackage.SEMESTER__SEASON:
+				setSeason((CourseStart)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -248,6 +308,9 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 			case StudyplanPackage.SEMESTER__COURSE_GROUPS:
 				getCourseGroups().clear();
 				return;
+			case StudyplanPackage.SEMESTER__SEASON:
+				setSeason(SEASON_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,6 +329,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				return credits != CREDITS_EDEFAULT;
 			case StudyplanPackage.SEMESTER__COURSE_GROUPS:
 				return courseGroups != null && !courseGroups.isEmpty();
+			case StudyplanPackage.SEMESTER__SEASON:
+				return season != SEASON_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -273,7 +338,7 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
@@ -284,6 +349,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 		result.append(number);
 		result.append(", credits: ");
 		result.append(credits);
+		result.append(", season: ");
+		result.append(this.getSeason());
 		result.append(')');
 		return result.toString();
 	}

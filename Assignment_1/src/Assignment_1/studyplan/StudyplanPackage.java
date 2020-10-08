@@ -243,13 +243,22 @@ public interface StudyplanPackage extends EPackage {
 	int SEMESTER__COURSE_GROUPS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__SEASON = 3;
+
+	/**
 	 * The number of structural features of the '<em>Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_FEATURE_COUNT = 3;
+	int SEMESTER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Semester</em>' class.
@@ -371,13 +380,22 @@ public interface StudyplanPackage extends EPackage {
 	int PROGRAMME__SPECIALIZATIONS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__SEMESTERS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_FEATURE_COUNT = 4;
+	int PROGRAMME_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -659,6 +677,17 @@ public interface StudyplanPackage extends EPackage {
 	EReference getSemester_CourseGroups();
 
 	/**
+	 * Returns the meta object for the attribute '{@link Assignment_1.studyplan.Semester#getSeason <em>Season</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Season</em>'.
+	 * @see Assignment_1.studyplan.Semester#getSeason()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_Season();
+
+	/**
 	 * Returns the meta object for class '{@link Assignment_1.studyplan.Specialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -765,6 +794,17 @@ public interface StudyplanPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProgramme_Specializations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Assignment_1.studyplan.Programme#getSemesters <em>Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Semesters</em>'.
+	 * @see Assignment_1.studyplan.Programme#getSemesters()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EReference getProgramme_Semesters();
 
 	/**
 	 * Returns the meta object for class '{@link Assignment_1.studyplan.Department <em>Department</em>}'.
@@ -1007,6 +1047,14 @@ public interface StudyplanPackage extends EPackage {
 		EReference SEMESTER__COURSE_GROUPS = eINSTANCE.getSemester_CourseGroups();
 
 		/**
+		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__SEASON = eINSTANCE.getSemester_Season();
+
+		/**
 		 * The meta object literal for the '{@link Assignment_1.studyplan.impl.SpecializationImpl <em>Specialization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1089,6 +1137,14 @@ public interface StudyplanPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAMME__SPECIALIZATIONS = eINSTANCE.getProgramme_Specializations();
+
+		/**
+		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME__SEMESTERS = eINSTANCE.getProgramme_Semesters();
 
 		/**
 		 * The meta object literal for the '{@link Assignment_1.studyplan.impl.DepartmentImpl <em>Department</em>}' class.

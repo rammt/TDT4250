@@ -4,6 +4,7 @@ package Assignment_1.studyplan.impl;
 
 import Assignment_1.studyplan.Degree;
 import Assignment_1.studyplan.Programme;
+import Assignment_1.studyplan.Semester;
 import Assignment_1.studyplan.Specialization;
 import Assignment_1.studyplan.StudyplanPackage;
 
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Assignment_1.studyplan.impl.ProgrammeImpl#getDuration <em>Duration</em>}</li>
  *   <li>{@link Assignment_1.studyplan.impl.ProgrammeImpl#getDegree <em>Degree</em>}</li>
  *   <li>{@link Assignment_1.studyplan.impl.ProgrammeImpl#getSpecializations <em>Specializations</em>}</li>
+ *   <li>{@link Assignment_1.studyplan.impl.ProgrammeImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,6 +111,16 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @ordered
 	 */
 	protected EList<Specialization> specializations;
+
+	/**
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemesters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Semester> semesters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,11 +221,25 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Semester> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, StudyplanPackage.PROGRAMME__SEMESTERS);
+		}
+		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case StudyplanPackage.PROGRAMME__SPECIALIZATIONS:
 				return ((InternalEList<?>)getSpecializations()).basicRemove(otherEnd, msgs);
+			case StudyplanPackage.PROGRAMME__SEMESTERS:
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -234,6 +260,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return getDegree();
 			case StudyplanPackage.PROGRAMME__SPECIALIZATIONS:
 				return getSpecializations();
+			case StudyplanPackage.PROGRAMME__SEMESTERS:
+				return getSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +288,10 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				getSpecializations().clear();
 				getSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
+			case StudyplanPackage.PROGRAMME__SEMESTERS:
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semester>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -284,6 +316,9 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case StudyplanPackage.PROGRAMME__SPECIALIZATIONS:
 				getSpecializations().clear();
 				return;
+			case StudyplanPackage.PROGRAMME__SEMESTERS:
+				getSemesters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,6 +339,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return degree != DEGREE_EDEFAULT;
 			case StudyplanPackage.PROGRAMME__SPECIALIZATIONS:
 				return specializations != null && !specializations.isEmpty();
+			case StudyplanPackage.PROGRAMME__SEMESTERS:
+				return semesters != null && !semesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

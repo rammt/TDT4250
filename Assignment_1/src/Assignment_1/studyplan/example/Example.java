@@ -24,7 +24,7 @@ public class Example {
 		TreeIterator<EObject> allContents = resource.getAllContents();
 		while (allContents.hasNext()) {
 			EObject eObject = allContents.next();
-			System.out.println(eObject);
+			System.out.println(eObject.toString());
 		}
 		
 		System.out.println("==========================================");

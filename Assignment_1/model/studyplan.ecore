@@ -59,6 +59,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="#//Credits"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" upperBound="-1"
         eType="#//CourseGroup" containment="true" eOpposite="#//CourseGroup/semester"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="#//CourseStart"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

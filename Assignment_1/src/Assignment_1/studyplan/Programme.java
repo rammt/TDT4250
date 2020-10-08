@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Assignment_1.studyplan.Programme#getDuration <em>Duration</em>}</li>
  *   <li>{@link Assignment_1.studyplan.Programme#getDegree <em>Degree</em>}</li>
  *   <li>{@link Assignment_1.studyplan.Programme#getSpecializations <em>Specializations</em>}</li>
+ *   <li>{@link Assignment_1.studyplan.Programme#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getProgramme()
@@ -106,5 +107,17 @@ public interface Programme extends EObject {
 	 * @generated
 	 */
 	EList<Specialization> getSpecializations();
+
+	/**
+	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link Assignment_1.studyplan.Semester}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semesters</em>' containment reference list.
+	 * @see Assignment_1.studyplan.StudyplanPackage#getProgramme_Semesters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Semester> getSemesters();
 
 } // Programme

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Assignment_1.studyplan.Semester#getNumber <em>Number</em>}</li>
  *   <li>{@link Assignment_1.studyplan.Semester#getCredits <em>Credits</em>}</li>
  *   <li>{@link Assignment_1.studyplan.Semester#getCourseGroups <em>Course Groups</em>}</li>
+ *   <li>{@link Assignment_1.studyplan.Semester#getSeason <em>Season</em>}</li>
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getSemester()
@@ -82,5 +83,30 @@ public interface Semester extends EObject {
 	 * @generated
 	 */
 	EList<CourseGroup> getCourseGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Season</b></em>' attribute.
+	 * The literals are from the enumeration {@link Assignment_1.studyplan.CourseStart}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Season</em>' attribute.
+	 * @see Assignment_1.studyplan.CourseStart
+	 * @see #setSeason(CourseStart)
+	 * @see Assignment_1.studyplan.StudyplanPackage#getSemester_Season()
+	 * @model derived="true"
+	 * @generated
+	 */
+	CourseStart getSeason();
+
+	/**
+	 * Sets the value of the '{@link Assignment_1.studyplan.Semester#getSeason <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Season</em>' attribute.
+	 * @see Assignment_1.studyplan.CourseStart
+	 * @see #getSeason()
+	 * @generated
+	 */
+	void setSeason(CourseStart value);
 
 } // Semester
