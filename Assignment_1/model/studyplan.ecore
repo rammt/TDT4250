@@ -74,6 +74,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="degree" eType="#//Degree"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
         eType="#//Specialization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
+        eType="#//Semester" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Department">
     <eStructuralFeatures xsi:type="ecore:EReference" name="studies" upperBound="-1"
