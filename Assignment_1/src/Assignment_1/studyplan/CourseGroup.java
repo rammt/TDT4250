@@ -22,7 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getCourseGroup()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='needsCoursesWithEnoughCredits'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumMandatoryCreditsInAllCourseGroupsSameSemester'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 maximumMandatoryCreditsInAllCourseGroupsSameSemester='self.semester.courseGroups.mandatoryCredits-&gt;sum() &lt;= Sequence{self.semester.credits}-&gt;sum()'"
  * @generated
  */
 public interface CourseGroup extends EObject {

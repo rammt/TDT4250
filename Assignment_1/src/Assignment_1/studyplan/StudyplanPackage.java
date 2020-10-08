@@ -4,6 +4,7 @@ package Assignment_1.studyplan;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -475,6 +476,16 @@ public interface StudyplanPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Credits</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Assignment_1.studyplan.impl.StudyplanPackageImpl#getCredits()
+	 * @generated
+	 */
+	int CREDITS = 10;
+
+
+	/**
 	 * Returns the meta object for class '{@link Assignment_1.studyplan.Course <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -828,6 +839,17 @@ public interface StudyplanPackage extends EPackage {
 	EEnum getCourseStart();
 
 	/**
+	 * Returns the meta object for data type '<em>Credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Credits</em>'.
+	 * @model instanceClass="float"
+	 *        extendedMetaData="minExclusive='0.0' maxInclusive='30.0'"
+	 * @generated
+	 */
+	EDataType getCredits();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1133,6 +1155,15 @@ public interface StudyplanPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COURSE_START = eINSTANCE.getCourseStart();
+
+		/**
+		 * The meta object literal for the '<em>Credits</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Assignment_1.studyplan.impl.StudyplanPackageImpl#getCredits()
+		 * @generated
+		 */
+		EDataType CREDITS = eINSTANCE.getCredits();
 
 	}
 

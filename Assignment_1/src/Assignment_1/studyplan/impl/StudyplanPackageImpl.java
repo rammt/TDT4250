@@ -18,6 +18,7 @@ import Assignment_1.studyplan.StudyplanPackage;
 import Assignment_1.studyplan.util.StudyplanValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -101,6 +102,13 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 	 * @generated
 	 */
 	private EEnum courseStartEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType creditsEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -474,6 +482,15 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getCredits() {
+		return creditsEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public StudyplanFactory getStudyplanFactory() {
 		return (StudyplanFactory)getEFactoryInstance();
 	}
@@ -537,6 +554,9 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		courseLevelEEnum = createEEnum(COURSE_LEVEL);
 		courseTypeEEnum = createEEnum(COURSE_TYPE);
 		courseStartEEnum = createEEnum(COURSE_START);
+
+		// Create data types
+		creditsEDataType = createEDataType(CREDITS);
 	}
 
 	/**
@@ -571,7 +591,7 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCourse_Credits(), ecorePackage.getEFloat(), "credits", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_Credits(), this.getCredits(), "credits", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Level(), this.getCourseLevel(), "level", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_Start(), this.getCourseStart(), "start", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -585,7 +605,7 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSemester_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSemester_Credits(), ecorePackage.getEFloat(), "credits", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_Credits(), this.getCredits(), "credits", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSemester_CourseGroups(), this.getCourseGroup(), this.getCourseGroup_Semester(), "courseGroups", null, 0, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -628,6 +648,9 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		addEEnumLiteral(courseStartEEnum, CourseStart.SPRING);
 		addEEnumLiteral(courseStartEEnum, CourseStart.EITHER);
 
+		// Initialize data types
+		initEDataType(creditsEDataType, float.class, "Credits", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -636,6 +659,8 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		createEcoreAnnotations();
 		// http://www.eclipse.org/acceleo/query/1.0
 		create_1Annotations();
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
 	}
 
 	/**
@@ -656,13 +681,13 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		  (courseEClass,
 		   source,
 		   new String[] {
-			   "constraints", "maximumCredits testConstraint"
+			   "constraints", "maximumCredits"
 		   });
 		addAnnotation
 		  (courseGroupEClass,
 		   source,
 		   new String[] {
-			   "constraints", "needsCoursesWithEnoughCredits"
+			   "constraints", "maximumMandatoryCreditsInAllCourseGroupsSameSemester"
 		   });
 	}
 
@@ -675,10 +700,27 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 	protected void create_1Annotations() {
 		String source = "http://www.eclipse.org/acceleo/query/1.0";
 		addAnnotation
-		  (courseEClass,
+		  (courseGroupEClass,
 		   source,
 		   new String[] {
-			   "testConstraint", ""
+			   "maximumMandatoryCreditsInAllCourseGroupsSameSemester", "self.semester.courseGroups.mandatoryCredits->sum() <= Sequence{self.semester.credits}->sum()"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation
+		  (creditsEDataType,
+		   source,
+		   new String[] {
+			   "minExclusive", "0.0",
+			   "maxInclusive", "30.0"
 		   });
 	}
 

@@ -22,8 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getCourse()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumCredits testConstraint'"
- *        annotation="http://www.eclipse.org/acceleo/query/1.0 testConstraint=''"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumCredits'"
  * @generated
  */
 public interface Course extends EObject {
@@ -56,7 +55,7 @@ public interface Course extends EObject {
 	 * @return the value of the '<em>Credits</em>' attribute.
 	 * @see #setCredits(float)
 	 * @see Assignment_1.studyplan.StudyplanPackage#getCourse_Credits()
-	 * @model
+	 * @model dataType="Assignment_1.studyplan.Credits"
 	 * @generated
 	 */
 	float getCredits();

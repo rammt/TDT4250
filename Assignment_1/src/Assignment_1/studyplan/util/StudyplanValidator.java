@@ -106,6 +106,8 @@ public class StudyplanValidator extends EObjectValidator {
 				return validateCourseType((CourseType)value, diagnostics, context);
 			case StudyplanPackage.COURSE_START:
 				return validateCourseStart((CourseStart)value, diagnostics, context);
+			case StudyplanPackage.CREDITS:
+				return validateCredits((Float)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -127,7 +129,6 @@ public class StudyplanValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(course, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(course, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCourse_maximumCredits(course, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCourse_testConstraint(course, diagnostics, context);
 		return result;
 	}
 
@@ -160,35 +161,6 @@ public class StudyplanValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the testConstraint constraint of '<em>Course</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COURSE__TEST_CONSTRAINT__EEXPRESSION = "";
-
-	/**
-	 * Validates the testConstraint constraint of '<em>Course</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCourse_testConstraint(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(StudyplanPackage.Literals.COURSE,
-				 course,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "testConstraint",
-				 COURSE__TEST_CONSTRAINT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -203,8 +175,37 @@ public class StudyplanValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(courseGroup, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(courseGroup, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(courseGroup, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCourseGroup_needsCoursesWithEnoughCredits(courseGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourseGroup_maximumMandatoryCreditsInAllCourseGroupsSameSemester(courseGroup, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the maximumMandatoryCreditsInAllCourseGroupsSameSemester constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE_GROUP__MAXIMUM_MANDATORY_CREDITS_IN_ALL_COURSE_GROUPS_SAME_SEMESTER__EEXPRESSION = "self.semester.courseGroups.mandatoryCredits->sum() <= Sequence{self.semester.credits}->sum()";
+
+	/**
+	 * Validates the maximumMandatoryCreditsInAllCourseGroupsSameSemester constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup_maximumMandatoryCreditsInAllCourseGroupsSameSemester(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE_GROUP,
+				 courseGroup,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "maximumMandatoryCreditsInAllCourseGroupsSameSemester",
+				 COURSE_GROUP__MAXIMUM_MANDATORY_CREDITS_IN_ALL_COURSE_GROUPS_SAME_SEMESTER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -309,6 +310,59 @@ public class StudyplanValidator extends EObjectValidator {
 	 */
 	public boolean validateCourseStart(CourseStart courseStart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCredits(float credits, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateCredits_Min(credits, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCredits_Max(credits, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateCredits_Min
+	 */
+	public static final float CREDITS__MIN__VALUE = 0.0F;
+
+	/**
+	 * Validates the Min constraint of '<em>Credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCredits_Min(float credits, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = credits > CREDITS__MIN__VALUE;
+		if (!result && diagnostics != null)
+			reportMinViolation(StudyplanPackage.Literals.CREDITS, credits, CREDITS__MIN__VALUE, false, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateCredits_Max
+	 */
+	public static final float CREDITS__MAX__VALUE = 30.0F;
+
+	/**
+	 * Validates the Max constraint of '<em>Credits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCredits_Max(float credits, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = credits <= CREDITS__MAX__VALUE;
+		if (!result && diagnostics != null)
+			reportMaxViolation(StudyplanPackage.Literals.CREDITS, credits, CREDITS__MAX__VALUE, true, diagnostics, context);
+		return result;
 	}
 
 	/**
