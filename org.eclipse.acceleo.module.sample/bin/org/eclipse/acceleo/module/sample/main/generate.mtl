@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module generate('platform:/plugin/Assignment_1/model/studyplan.ecore')]
+
+
+[template public generateHtml(department : Department)]
+[comment @main/]
+[file ('Studyplan.html', false, 'UTF-8')]
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>[department.studies.name/]Courses</title>
+<style>
+body {
+	font-family: "open sans", arial, sans-serif;
+}
+</style>
+<body>
+<h1>[department.studies.name/]</h1>
+<hr>
+[for (specializations : Specialization | department.studies.specializations)]
+	<h2>[specializations.name/]</h2>
+	[for (semesters : Semester | specializations.semesters)]
+		<p>Semester [semesters.number/]</p>
+		[for (courseGroups : CourseGroup | semesters.courseGroups)]
+		[/for]
+	[/for]
+[/for]
+</body>
+</head>
+</html>
+[/file]
+[/template]
