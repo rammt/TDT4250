@@ -61,6 +61,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Programme/duration"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Programme/degree"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyplan.ecore#//Programme/specializations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyplan.ecore#//Programme/semesters"/>
     </genClasses>
     <genClasses ecoreClass="studyplan.ecore#//Department">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyplan.ecore#//Department/studies"/>
