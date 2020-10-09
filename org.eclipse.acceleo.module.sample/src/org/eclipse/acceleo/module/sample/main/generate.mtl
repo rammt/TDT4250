@@ -28,7 +28,7 @@ table {
 [for (specializations : Specialization | department.studies.specializations)]
 	<h2>[specializations.name/]</h2>
 	[for (semesters : Semester | specializations.semesters)]
-		<h4>[semesters.season/]</h4>
+		<h3>[semesters.season/] (semester [semesters.number/])</h3>
 		<p>Mandatory Courses</p>
 		<table>
 		<tr>
