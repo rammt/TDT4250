@@ -108,6 +108,8 @@ public class StudyplanValidator extends EObjectValidator {
 				return validateCourseStart((CourseStart)value, diagnostics, context);
 			case StudyplanPackage.CREDITS:
 				return validateCredits((Float)value, diagnostics, context);
+			case StudyplanPackage.SEMESTER_NR:
+				return validateSemesterNr((Integer)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -129,6 +131,7 @@ public class StudyplanValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(course, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(course, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCourse_maximumCredits(course, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourse_uniqueCourseCode(course, diagnostics, context);
 		return result;
 	}
 
@@ -161,6 +164,35 @@ public class StudyplanValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the uniqueCourseCode constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE__UNIQUE_COURSE_CODE__EEXPRESSION = "self.eContainer().courses->isUnique(course | course.code)";
+
+	/**
+	 * Validates the uniqueCourseCode constraint of '<em>Course</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourse_uniqueCourseCode(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE,
+				 course,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "uniqueCourseCode",
+				 COURSE__UNIQUE_COURSE_CODE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -176,6 +208,11 @@ public class StudyplanValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(courseGroup, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(courseGroup, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCourseGroup_maximumMandatoryCreditsInAllCourseGroupsSameSemester(courseGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourseGroup_electiveTypeZeroCredits(courseGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourseGroup_M1AType7HalfCredits(courseGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourseGroup_M2AType15Credits(courseGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourseGroup_OTypeCredits(courseGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCourseGroup_EIType7HalfCredits(courseGroup, diagnostics, context);
 		return result;
 	}
 
@@ -203,6 +240,151 @@ public class StudyplanValidator extends EObjectValidator {
 				 "http://www.eclipse.org/acceleo/query/1.0",
 				 "maximumMandatoryCreditsInAllCourseGroupsSameSemester",
 				 COURSE_GROUP__MAXIMUM_MANDATORY_CREDITS_IN_ALL_COURSE_GROUPS_SAME_SEMESTER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the electiveTypeZeroCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE_GROUP__ELECTIVE_TYPE_ZERO_CREDITS__EEXPRESSION = "if self.type.value=1 or self.type.value=2 then self.mandatoryCredits->sum() == Sequence{0.0}->sum() else true endif";
+
+	/**
+	 * Validates the electiveTypeZeroCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup_electiveTypeZeroCredits(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE_GROUP,
+				 courseGroup,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "electiveTypeZeroCredits",
+				 COURSE_GROUP__ELECTIVE_TYPE_ZERO_CREDITS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the M1AType7HalfCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE_GROUP__M1A_TYPE7_HALF_CREDITS__EEXPRESSION = "if self.type.value=3 then self.mandatoryCredits->sum() == Sequence{7.5}->sum() else true endif";
+
+	/**
+	 * Validates the M1AType7HalfCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup_M1AType7HalfCredits(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE_GROUP,
+				 courseGroup,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "M1AType7HalfCredits",
+				 COURSE_GROUP__M1A_TYPE7_HALF_CREDITS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the M2AType15Credits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE_GROUP__M2A_TYPE15_CREDITS__EEXPRESSION = "if self.type.value=4 then self.mandatoryCredits->sum() == Sequence{15.0}->sum() else true endif";
+
+	/**
+	 * Validates the M2AType15Credits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup_M2AType15Credits(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE_GROUP,
+				 courseGroup,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "M2AType15Credits",
+				 COURSE_GROUP__M2A_TYPE15_CREDITS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the OTypeCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE_GROUP__OTYPE_CREDITS__EEXPRESSION = "if self.type.value=0 then self.mandatoryCredits->sum() == self.courses.credits->sum() else true endif";
+
+	/**
+	 * Validates the OTypeCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup_OTypeCredits(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE_GROUP,
+				 courseGroup,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "OTypeCredits",
+				 COURSE_GROUP__OTYPE_CREDITS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the EIType7HalfCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COURSE_GROUP__EI_TYPE7_HALF_CREDITS__EEXPRESSION = "if self.type.value=5 then self.mandatoryCredits->sum() == Sequence{7.5}->sum() else true endif";
+
+	/**
+	 * Validates the EIType7HalfCredits constraint of '<em>Course Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup_EIType7HalfCredits(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyplanPackage.Literals.COURSE_GROUP,
+				 courseGroup,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "EIType7HalfCredits",
+				 COURSE_GROUP__EI_TYPE7_HALF_CREDITS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -362,6 +544,37 @@ public class StudyplanValidator extends EObjectValidator {
 		boolean result = credits <= CREDITS__MAX__VALUE;
 		if (!result && diagnostics != null)
 			reportMaxViolation(StudyplanPackage.Literals.CREDITS, credits, CREDITS__MAX__VALUE, true, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemesterNr(int semesterNr, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = validateSemesterNr_Min(semesterNr, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validateSemesterNr_Min
+	 */
+	public static final int SEMESTER_NR__MIN__VALUE = 1;
+
+	/**
+	 * Validates the Min constraint of '<em>Semester Nr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemesterNr_Min(int semesterNr, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = semesterNr >= SEMESTER_NR__MIN__VALUE;
+		if (!result && diagnostics != null)
+			reportMinViolation(StudyplanPackage.Literals.SEMESTER_NR, semesterNr, SEMESTER_NR__MIN__VALUE, true, diagnostics, context);
 		return result;
 	}
 

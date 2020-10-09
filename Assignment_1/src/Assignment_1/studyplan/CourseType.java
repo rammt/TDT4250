@@ -66,7 +66,15 @@ public enum CourseType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	M2A(4, "M2A", "M2A");
+	M2A(4, "M2A", "M2A"), /**
+	 * The '<em><b>EIT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EIT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	EIT(5, "EIT", "EIT");
 
 	/**
 	 * The '<em><b>O</b></em>' literal value.
@@ -124,6 +132,17 @@ public enum CourseType implements Enumerator {
 	public static final int M2A_VALUE = 4;
 
 	/**
+	 * The '<em><b>EIT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #EIT
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EIT_VALUE = 5;
+
+	/**
 	 * An array of all the '<em><b>Course Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,6 +155,7 @@ public enum CourseType implements Enumerator {
 			VB,
 			M1A,
 			M2A,
+			EIT,
 		};
 
 	/**
@@ -197,6 +217,7 @@ public enum CourseType implements Enumerator {
 			case VB_VALUE: return VB;
 			case M1A_VALUE: return M1A;
 			case M2A_VALUE: return M2A;
+			case EIT_VALUE: return EIT;
 		}
 		return null;
 	}

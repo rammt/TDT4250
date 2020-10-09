@@ -86,6 +86,8 @@ public class StudyplanFactoryImpl extends EFactoryImpl implements StudyplanFacto
 				return createCourseStartFromString(eDataType, initialValue);
 			case StudyplanPackage.CREDITS:
 				return createCreditsFromString(eDataType, initialValue);
+			case StudyplanPackage.SEMESTER_NR:
+				return createSemesterNrFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -109,6 +111,8 @@ public class StudyplanFactoryImpl extends EFactoryImpl implements StudyplanFacto
 				return convertCourseStartToString(eDataType, instanceValue);
 			case StudyplanPackage.CREDITS:
 				return convertCreditsToString(eDataType, instanceValue);
+			case StudyplanPackage.SEMESTER_NR:
+				return convertSemesterNrToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -269,6 +273,24 @@ public class StudyplanFactoryImpl extends EFactoryImpl implements StudyplanFacto
 	 * @generated
 	 */
 	public String convertCreditsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer createSemesterNrFromString(EDataType eDataType, String initialValue) {
+		return (Integer)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSemesterNrToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

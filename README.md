@@ -2,38 +2,69 @@
 
 Eivind Rydningen and Thomas Iversen Ramm
 
+## Assignment 1
+
 ## Structure
 ``` 
 .
-├── META-INF
-│   └── MANIFEST.MF
+├── Assignment_1
+│   ├── META-INF
+│   │   └── MANIFEST.MF
+│   ├── Programme.png
+│   ├── bin
+│   │   └── Assignment_1
+│   │       └── studyplan
+│   │           ├── Course.class
+│   │           ├── CourseGroup.class
+│   │           ├── CourseLevel.class
+│   │           ├── CourseStart.class
+│   │           ├── CourseType.class
+│   │           ├── Degree.class
+│   │           ├── Department.class
+│   │           ├── Programme.class
+│   │           ├── Semester.class
+│   │           ├── Specialization.class
+│   │           ├── StudyplanFactory.class
+│   │           ├── StudyplanPackage$Literals.class
+│   │           ├── StudyplanPackage.class
+│   │           ├── example
+│   │           │   ├── Department.xmi
+│   │           │   └── Example.class
+│   │           ├── impl
+│   │           │   └── All implemantation classes ...
+│   │           ├── util
+│   │           │   └── All utilities ...
+│   ├── build.properties
+│   ├── departmentoverview.png
+│   ├── images
+│   │   └── ... All images
+│   ├── model
+│   │   ├── Department.xmi
+│   │   ├── studyplan.ecore
+│   │   └── studyplan.genmodel
+│   ├── plugin.properties
+│   ├── plugin.xml
+│   └── src
+│       └── Assignment_1
+│           └── studyplan
+│                   └── Auto generated code ...
+├── Assignment_1.tests
+│   └── All test code ...
 ├── README.md
-├── bin
-│   └── assignment_1
-│       ├── Assignment_1Factory.class
-│       ├── Assignment_1Package$Literals.class
-│       ├── Assignment_1Package.class
-│       ├── Course.class
-│       ├── CourseGroup.class
-│       ├── CourseLevel.class
-│       ├── CourseStart.class
-│       ├── CourseType.class
-│       ├── Degree.class
-│       ├── Programme.class
-│       ├── Semester.class
-│       ├── Specialization.class
-│       ├── StudyStart.class
-│       ├── impl
-│       │   ... All implemantation classes
-│       └── util
-│           ... All utilities
-├── model
-│   ├── assignment_1.aird
-│   ├── assignment_1.ecore
-│   └── assignment_1.genmodel
-└── src-gen
-    └── assignment_1
-        │   ... Auto generated code
+└── org.eclipse.acceleo.module.sample
+    ├── META-INF
+    │   └── MANIFEST.MF
+    ├── Studyplan.html
+    ├── bin
+    │   └── org.eclipse.acceleo.module.sample
+    │       └── Activator.class
+    ├── build.properties
+    ├── src
+    │   └── org.eclipse.acceleo.module.sample.main
+    │       ├── Generate.java
+    │       └── generate.mtl
+    └── tasks
+        └── All task files ...
 ```
 
 ## Content
@@ -64,3 +95,22 @@ A course group is a group of courses with similar rules I.E O, VA, VB, M1A, M2A.
 
 #### Course
 Holds the course code, its name, how many credits its worth. It also holds the enumerations of course level (level 1, level 2, level 3 and higher level) and an enumeration of course start (autumn, spring or either of the two). A course is constrained to a maximum of 30.0 credits.
+
+### Dependencies
+![alt text](https://github.com/rammt/TDT4250/tree/master/images/model_dependencies.png "Model Dependencies")
+
+## Assignment 2
+
+### Changes from Assignment 1
+We made a few changes to our model, mainly that a Programme may contain a semmester without referencing a Specialziation and that a Semester now contains a derived feature Season (from Semester number). We also implmented the datatype Credits and constrained it to be a float between 0.0 and 30.0.
+
+For assignment 2 we opted to use an acceleo M2T transformation.
+
+### How to run
+To run the generate.mtl file on the model. Apply the following run configuration to the file.
+
+![alt text](https://github.com/rammt/TDT4250/tree/master/images/run_config_acceleo.png "Generate.mtl run configuration")
+
+### Dependencies
+![alt text](acceleo_dependencies.png "Model Dependencies")
+

@@ -33,7 +33,7 @@ public interface Semester extends EObject {
 	 * @return the value of the '<em>Number</em>' attribute.
 	 * @see #setNumber(int)
 	 * @see Assignment_1.studyplan.StudyplanPackage#getSemester_Number()
-	 * @model
+	 * @model dataType="Assignment_1.studyplan.SemesterNr"
 	 * @generated
 	 */
 	int getNumber();

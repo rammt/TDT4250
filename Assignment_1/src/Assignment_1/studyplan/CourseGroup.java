@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getCourseGroup()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumMandatoryCreditsInAllCourseGroupsSameSemester'"
- *        annotation="http://www.eclipse.org/acceleo/query/1.0 maximumMandatoryCreditsInAllCourseGroupsSameSemester='self.semester.courseGroups.mandatoryCredits-&gt;sum() &lt;= Sequence{self.semester.credits}-&gt;sum()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumMandatoryCreditsInAllCourseGroupsSameSemester electiveTypeZeroCredits M1AType7HalfCredits M2AType15Credits OTypeCredits EIType7HalfCredits'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 maximumMandatoryCreditsInAllCourseGroupsSameSemester='self.semester.courseGroups.mandatoryCredits-&gt;sum() &lt;= Sequence{self.semester.credits}-&gt;sum()' electiveTypeZeroCredits='if self.type.value=1 or self.type.value=2 then self.mandatoryCredits-&gt;sum() == Sequence{0.0}-&gt;sum() else true endif' M1AType7HalfCredits='if self.type.value=3 then self.mandatoryCredits-&gt;sum() == Sequence{7.5}-&gt;sum() else true endif' M2AType15Credits='if self.type.value=4 then self.mandatoryCredits-&gt;sum() == Sequence{15.0}-&gt;sum() else true endif' OTypeCredits='if self.type.value=0 then self.mandatoryCredits-&gt;sum() == self.courses.credits-&gt;sum() else true endif' EIType7HalfCredits='if self.type.value=5 then self.mandatoryCredits-&gt;sum() == Sequence{7.5}-&gt;sum() else true endif'"
  * @generated
  */
 public interface CourseGroup extends EObject {

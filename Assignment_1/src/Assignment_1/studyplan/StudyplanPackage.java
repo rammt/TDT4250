@@ -504,6 +504,16 @@ public interface StudyplanPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Semester Nr</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Assignment_1.studyplan.impl.StudyplanPackageImpl#getSemesterNr()
+	 * @generated
+	 */
+	int SEMESTER_NR = 11;
+
+
+	/**
 	 * Returns the meta object for class '{@link Assignment_1.studyplan.Course <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -890,6 +900,17 @@ public interface StudyplanPackage extends EPackage {
 	EDataType getCredits();
 
 	/**
+	 * Returns the meta object for data type '<em>Semester Nr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Semester Nr</em>'.
+	 * @model instanceClass="int"
+	 *        extendedMetaData="minInclusive='1'"
+	 * @generated
+	 */
+	EDataType getSemesterNr();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1220,6 +1241,15 @@ public interface StudyplanPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType CREDITS = eINSTANCE.getCredits();
+
+		/**
+		 * The meta object literal for the '<em>Semester Nr</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Assignment_1.studyplan.impl.StudyplanPackageImpl#getSemesterNr()
+		 * @generated
+		 */
+		EDataType SEMESTER_NR = eINSTANCE.getSemesterNr();
 
 	}
 

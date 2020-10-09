@@ -22,7 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see Assignment_1.studyplan.StudyplanPackage#getCourse()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumCredits'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='maximumCredits uniqueCourseCode'"
+ *        annotation="http://www.eclipse.org/acceleo/query/1.0 uniqueCourseCode='self.eContainer().courses-&gt;isUnique(course | course.code)'"
  * @generated
  */
 public interface Course extends EObject {

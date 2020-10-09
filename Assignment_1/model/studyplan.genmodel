@@ -24,6 +24,7 @@
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseType/VB"/>
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseType/M1A"/>
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseType/M2A"/>
+      <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseType/EIT"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="studyplan.ecore#//CourseStart">
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseStart/Autumn"/>
@@ -31,6 +32,7 @@
       <genEnumLiterals ecoreEnumLiteral="studyplan.ecore#//CourseStart/Either"/>
     </genEnums>
     <genDataTypes ecoreDataType="studyplan.ecore#//Credits"/>
+    <genDataTypes ecoreDataType="studyplan.ecore#//SemesterNr"/>
     <genClasses ecoreClass="studyplan.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyplan.ecore#//Course/credits"/>

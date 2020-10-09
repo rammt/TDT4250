@@ -111,6 +111,13 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 	private EDataType creditsEDataType = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType semesterNrEDataType = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -509,6 +516,15 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getSemesterNr() {
+		return semesterNrEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public StudyplanFactory getStudyplanFactory() {
 		return (StudyplanFactory)getEFactoryInstance();
 	}
@@ -577,6 +593,7 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 
 		// Create data types
 		creditsEDataType = createEDataType(CREDITS);
+		semesterNrEDataType = createEDataType(SEMESTER_NR);
 	}
 
 	/**
@@ -624,7 +641,7 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		initEReference(getCourseGroup_Semester(), this.getSemester(), this.getSemester_CourseGroups(), "semester", null, 0, 1, CourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSemester_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_Number(), this.getSemesterNr(), "number", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSemester_Credits(), this.getCredits(), "credits", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSemester_CourseGroups(), this.getCourseGroup(), this.getCourseGroup_Semester(), "courseGroups", null, 0, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSemester_Season(), this.getCourseStart(), "season", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -664,6 +681,7 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		addEEnumLiteral(courseTypeEEnum, CourseType.VB);
 		addEEnumLiteral(courseTypeEEnum, CourseType.M1A);
 		addEEnumLiteral(courseTypeEEnum, CourseType.M2A);
+		addEEnumLiteral(courseTypeEEnum, CourseType.EIT);
 
 		initEEnum(courseStartEEnum, CourseStart.class, "CourseStart");
 		addEEnumLiteral(courseStartEEnum, CourseStart.AUTUMN);
@@ -672,6 +690,7 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 
 		// Initialize data types
 		initEDataType(creditsEDataType, float.class, "Credits", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(semesterNrEDataType, int.class, "SemesterNr", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -703,13 +722,13 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		  (courseEClass,
 		   source,
 		   new String[] {
-			   "constraints", "maximumCredits"
+			   "constraints", "maximumCredits uniqueCourseCode"
 		   });
 		addAnnotation
 		  (courseGroupEClass,
 		   source,
 		   new String[] {
-			   "constraints", "maximumMandatoryCreditsInAllCourseGroupsSameSemester"
+			   "constraints", "maximumMandatoryCreditsInAllCourseGroupsSameSemester electiveTypeZeroCredits M1AType7HalfCredits M2AType15Credits OTypeCredits EIType7HalfCredits"
 		   });
 	}
 
@@ -722,10 +741,21 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 	protected void create_1Annotations() {
 		String source = "http://www.eclipse.org/acceleo/query/1.0";
 		addAnnotation
+		  (courseEClass,
+		   source,
+		   new String[] {
+			   "uniqueCourseCode", "self.eContainer().courses->isUnique(course | course.code)"
+		   });
+		addAnnotation
 		  (courseGroupEClass,
 		   source,
 		   new String[] {
-			   "maximumMandatoryCreditsInAllCourseGroupsSameSemester", "self.semester.courseGroups.mandatoryCredits->sum() <= Sequence{self.semester.credits}->sum()"
+			   "maximumMandatoryCreditsInAllCourseGroupsSameSemester", "self.semester.courseGroups.mandatoryCredits->sum() <= Sequence{self.semester.credits}->sum()",
+			   "electiveTypeZeroCredits", "if self.type.value=1 or self.type.value=2 then self.mandatoryCredits->sum() == Sequence{0.0}->sum() else true endif",
+			   "M1AType7HalfCredits", "if self.type.value=3 then self.mandatoryCredits->sum() == Sequence{7.5}->sum() else true endif",
+			   "M2AType15Credits", "if self.type.value=4 then self.mandatoryCredits->sum() == Sequence{15.0}->sum() else true endif",
+			   "OTypeCredits", "if self.type.value=0 then self.mandatoryCredits->sum() == self.courses.credits->sum() else true endif",
+			   "EIType7HalfCredits", "if self.type.value=5 then self.mandatoryCredits->sum() == Sequence{7.5}->sum() else true endif"
 		   });
 	}
 
@@ -743,6 +773,12 @@ public class StudyplanPackageImpl extends EPackageImpl implements StudyplanPacka
 		   new String[] {
 			   "minExclusive", "0.0",
 			   "maxInclusive", "30.0"
+		   });
+		addAnnotation
+		  (semesterNrEDataType,
+		   source,
+		   new String[] {
+			   "minInclusive", "1"
 		   });
 	}
 

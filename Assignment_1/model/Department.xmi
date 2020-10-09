@@ -13,7 +13,7 @@
         name="Software">
       <semesters
           number="1"
-          credits="25.0">
+          credits="30.0">
         <courseGroups
             courses="//@courses.1"
             mandatoryCredits="7.5"/>
@@ -39,8 +39,8 @@
             courses="//@courses.10 //@courses.11 //@courses.12"
             mandatoryCredits="7.5"/>
         <courseGroups
-            type="VA"
-            courses="//@courses.13"
+            type="EIT"
+            courses="//@courses.13 //@courses.25"
             mandatoryCredits="7.5"/>
       </semesters>
       <semesters
@@ -89,14 +89,13 @@
             mandatoryCredits="7.5"/>
         <courseGroups
             type="VA"
-            courses="//@courses.20 //@courses.21 //@courses.8 //@courses.10 //@courses.12 //@courses.11"
-            mandatoryCredits="7.5"/>
+            courses="//@courses.20 //@courses.21 //@courses.8 //@courses.10 //@courses.12 //@courses.11"/>
         <courseGroups
             type="VB"
             courses="//@courses.23 //@courses.22 //@courses.24"/>
         <courseGroups
-            type="VA"
-            courses="//@courses.13"
+            type="EIT"
+            courses="//@courses.13 //@courses.25"
             mandatoryCredits="7.5"/>
       </semesters>
       <semesters
@@ -182,9 +181,9 @@
       name="Advanced Software Engineering"
       level="HigherLevel"
       start="Spring"/>
-  <courses code="EXPERT"
+  <courses code="EXPERT0001"
       credits="7.5"
-      name="Experts in Teamwork"
+      name="Experts in Teamwork 1"
       level="HigherLevel"
       start="Spring"/>
   <courses code="IT3915"
@@ -235,5 +234,9 @@
       credits="2.0"
       name="Graphics and Visualization"
       level="HigherLevel"
+      start="Spring"/>
+  <courses code="EXPERT0002"
+      credits="7.5"
+      name="Experts in Teamwork 2"
       start="Spring"/>
 </studyplan:Department>

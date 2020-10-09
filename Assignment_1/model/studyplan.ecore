@@ -22,6 +22,7 @@
     <eLiterals name="VB" value="2"/>
     <eLiterals name="M1A" value="3"/>
     <eLiterals name="M2A" value="4"/>
+    <eLiterals name="EIT" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CourseStart">
     <eLiterals name="Autumn"/>
@@ -30,7 +31,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="maximumCredits"/>
+      <details key="constraints" value="maximumCredits uniqueCourseCode"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
+      <details key="uniqueCourseCode" value="self.eContainer().courses->isUnique(course | course.code)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="#//Credits"/>
@@ -42,10 +46,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="maximumMandatoryCreditsInAllCourseGroupsSameSemester"/>
+      <details key="constraints" value="maximumMandatoryCreditsInAllCourseGroupsSameSemester electiveTypeZeroCredits M1AType7HalfCredits M2AType15Credits OTypeCredits EIType7HalfCredits"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/acceleo/query/1.0">
       <details key="maximumMandatoryCreditsInAllCourseGroupsSameSemester" value="self.semester.courseGroups.mandatoryCredits->sum() &lt;= Sequence{self.semester.credits}->sum()"/>
+      <details key="electiveTypeZeroCredits" value="if self.type.value=1 or self.type.value=2 then self.mandatoryCredits->sum() == Sequence{0.0}->sum() else true endif"/>
+      <details key="M1AType7HalfCredits" value="if self.type.value=3 then self.mandatoryCredits->sum() == Sequence{7.5}->sum() else true endif"/>
+      <details key="M2AType15Credits" value="if self.type.value=4 then self.mandatoryCredits->sum() == Sequence{15.0}->sum() else true endif"/>
+      <details key="OTypeCredits" value="if self.type.value=0 then self.mandatoryCredits->sum() == self.courses.credits->sum() else true endif"/>
+      <details key="EIType7HalfCredits" value="if self.type.value=5 then self.mandatoryCredits->sum() == Sequence{7.5}->sum() else true endif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CourseType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
@@ -55,7 +64,7 @@
         eOpposite="#//Semester/courseGroups"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Semester">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="#//SemesterNr"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="#//Credits"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" upperBound="-1"
         eType="#//CourseGroup" containment="true" eOpposite="#//CourseGroup/semester"/>
@@ -89,6 +98,11 @@
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="minExclusive" value="0.0"/>
       <details key="maxInclusive" value="30.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="SemesterNr" instanceClassName="int">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="minInclusive" value="1"/>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>
