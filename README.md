@@ -97,7 +97,7 @@ A course group is a group of courses with similar rules I.E O, VA, VB, M1A, M2A.
 Holds the course code, its name, how many credits its worth. It also holds the enumerations of course level (level 1, level 2, level 3 and higher level) and an enumeration of course start (autumn, spring or either of the two). A course is constrained to a maximum of 30.0 credits.
 
 ### Dependencies
-![alt text](https://github.com/rammt/TDT4250/tree/master/images/model_dependencies.png "Model Dependencies")
+![alt text](https://github.com/rammt/TDT4250/blob/master/images/model_dependencies.png?raw=true "Model Dependencies")
 
 ## Assignment 2
 
@@ -109,8 +109,8 @@ For assignment 2 we opted to use an acceleo M2T transformation.
 ### How to run
 To run the generate.mtl file on the model. Apply the following run configuration to the file.
 
-![alt text](https://github.com/rammt/TDT4250/tree/master/images/run_config_acceleo.png "Generate.mtl run configuration")
+![alt text](https://github.com/rammt/TDT4250/blob/master/images/run_config_acceleo.png?raw=true "Generate.mtl run configuration")
 
 ### Dependencies
-![alt text](acceleo_dependencies.png "Model Dependencies")
+![alt text](https://github.com/rammt/TDT4250/blob/master/images/acceleo_dependencies.png?raw=true "Model Dependencies")
 
