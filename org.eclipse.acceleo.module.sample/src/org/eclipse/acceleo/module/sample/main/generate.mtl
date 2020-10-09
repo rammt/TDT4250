@@ -23,54 +23,56 @@ table {
 }
 </style>
 <body>
-<h1>[department.studies.name/]</h1>
-<hr>
-[for (specializations : Specialization | department.studies.specializations)]
-	<h2>[specializations.name/]</h2>
-	[for (semesters : Semester | specializations.semesters)]
-		<h4>[semesters.season/]</h4>
-		<p>Mandatory Courses</p>
-		<table>
-		<tr>
-			<th>Code</th>
-			<th>Name</th>
-			<th>Credits</th>
-			<th>Type</th>
-		</tr>
-		[for (courseGroups : CourseGroup | semesters.courseGroups)]
-			[if(courseGroups.mandatoryCredits > 0.0)]
-			[for (courses : Course | courseGroups.courses)]
+[for (studies : Programme | department.studies)]
+	<h1>[studies.name/]</h1>
+	<hr>
+	[for (specializations : Specialization | studies.specializations)]
+		<h2>[specializations.name/]</h2>
+		[for (semesters : Semester | specializations.semesters)]
+			<h4>[semesters.season/]</h4>
+			<p>Mandatory Courses</p>
+			<table>
 			<tr>
-				<td class="code-name">[courses.code /]</td>
-				<td class="code-name">[courses.name /] </td>
-				<td>[courses.credits /]</td>
-				<td>[courseGroups.type /]</td> 
+				<th>Code</th>
+				<th>Name</th>
+				<th>Credits</th>
+				<th>Type</th>
 			</tr>
+			[for (courseGroups : CourseGroup | semesters.courseGroups)]
+				[if(courseGroups.mandatoryCredits > 0.0)]
+				[for (courses : Course | courseGroups.courses)]
+				<tr>
+					<td class="code-name">[courses.code /]</td>
+					<td class="code-name">[courses.name /] </td>
+					<td>[courses.credits /]</td>
+					<td>[courseGroups.type /]</td> 
+				</tr>
+				[/for]
+				[/if]
 			[/for]
-			[/if]
-		[/for]
-		</table>
-		<p>Elective Courses</p>
-		<table>
-		<tr>
-			<th>Code</th>
-			<th>Name</th>
-			<th>Credits</th>
-			<th>Type</th>
-		</tr>
-		[for (courseGroups : CourseGroup | semesters.courseGroups)]
-			[if(courseGroups.mandatoryCredits = 0.0)]
-			[for (courses : Course | courseGroups.courses)]
+			</table>
+			<p>Elective Courses</p>
+			<table>
 			<tr>
-				<td class="code-name">[courses.code /]</td>
-				<td class="code-name">[courses.name /] </td>
-				<td>[courses.credits /]</td>
-				<td>[courseGroups.type /]</td> 
+				<th>Code</th>
+				<th>Name</th>
+				<th>Credits</th>
+				<th>Type</th>
 			</tr>
+			[for (courseGroups : CourseGroup | semesters.courseGroups)]
+				[if(courseGroups.mandatoryCredits = 0.0)]
+				[for (courses : Course | courseGroups.courses)]
+				<tr>
+					<td class="code-name">[courses.code /]</td>
+					<td class="code-name">[courses.name /] </td>
+					<td>[courses.credits /]</td>
+					<td>[courseGroups.type /]</td> 
+				</tr>
+				[/for]
+				[/if]
 			[/for]
-			[/if]
+			</table>
 		[/for]
-		</table>
 	[/for]
 [/for]
 </body>
