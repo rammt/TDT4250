@@ -74,6 +74,7 @@ Limitations of model
 * All study programmes must start in autumn
 
 ### Classes
+![alt text](https://github.com/rammt/TDT4250/blob/master/images/model.png?raw=true "Model")
 
 #### Department
 Contains all available courses and programmes.
@@ -85,7 +86,7 @@ Contains the name of the programme, I.E Master of Science in Informatics, and th
 A specialization/major holds a specializationCode or keyword in addition to a name. A specialization may also contain several sub specialziations. It also consists of several semesters.
 
 #### Semester
-Semesters are indentified by an integer relative to how far along in the programme you are. The float semesterCredits indicate how many credits a given semester has currently, the value is constrained to be at least 30.0 credits per semester. A semester contains one or more course groups. Semester number is an integer >= 1.
+Semesters are indentified by an integer relative to how far along in the programme you are. The float semesterCredits indicate how many credits a given semester has currently, the value is constrained to be at least 30.0 credits per semester. A semester contains one or more course groups. Semester number is an integer >= 1. Season is derived from semester number. Odd numbers -> autumn and even numbers -> spring
 
 #### CourseGroup
 A course group is a group of courses with similar rules I.E O, VA, VB, M1A, M2A, EIT (same rules as M1A). The class attribute CourseType is an enumeration representing the mentioned rules. These groups may contain zero or several courses depending on the semester and programme etc.
