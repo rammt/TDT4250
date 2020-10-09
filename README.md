@@ -36,8 +36,6 @@ Eivind Rydningen and Thomas Iversen Ramm
 │   │           │   └── All utilities ...
 │   ├── build.properties
 │   ├── departmentoverview.png
-│   ├── images
-│   │   └── ... All images
 │   ├── model
 │   │   ├── Department.xmi
 │   │   ├── studyplan.ecore
@@ -50,6 +48,8 @@ Eivind Rydningen and Thomas Iversen Ramm
 │                   └── Auto generated code ...
 ├── Assignment_1.tests
 │   └── All test code ...
+├── images
+│   └── ... All images
 ├── README.md
 └── org.eclipse.acceleo.module.sample
     ├── META-INF
